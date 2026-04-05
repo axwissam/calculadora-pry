@@ -197,13 +197,24 @@ export default function Home() {
         {/* Bloco de conteúdo SEO — "isca" para AdSense e Google */}
         <div className="bg-white rounded-2xl p-5 shadow-sm text-sm text-gray-600 space-y-3">
           <h2 className="font-bold text-gray-800 text-base">📋 Cota de compras no Paraguai em 2026</h2>
-          <p>A cota de isenção para compras no Paraguai em 2026 é de <strong>US$ 500 por pessoa via terrestre</strong> (Ponte da Amizade / Pedro Juan). Para viagens aéreas, o limite sobe para <strong>US$ 1.000 por pessoa</strong>.</p>
-          <p>Valores acima da cota são tributados em <strong>50% de imposto de importação</strong> sobre o excedente. Além disso, pagamentos com cartão de crédito no exterior têm <strong>IOF de 6,38%</strong>.</p>
-          <p><strong>Dica:</strong> Para economizar ao máximo, prefira pagar em dinheiro ou Pix — sem IOF e sem spread bancário.</p>
+          <p>A cota de isenção para compras no Paraguai em 2026 é de <strong>US$ 500 por pessoa via terrestre</strong> (Ponte da Amizade / Pedro Juan Caballero). Para viagens aéreas, o limite sobe para <strong>US$ 1.000 por pessoa</strong>.</p>
+          <p>Valores acima da cota são tributados em <strong>50% de imposto de importação</strong> sobre o excedente. Por exemplo: se você comprou US$ 800, paga 50% sobre os US$ 300 excedentes — ou seja, US$ 150 de imposto convertidos pela cotação do dia.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">💳 IOF e spread: os custos escondidos</h2>
+          <p>Além do imposto de importação, pagamentos com cartão têm <strong>IOF de 3,5%</strong> e spread bancário de até 7%. Bancos como Nomad e Wise não cobram IOF na compra — o imposto já foi pago na conversão de reais para dólar.</p>
+          <p><strong>Dica:</strong> Para economizar ao máximo, prefira pagar em dinheiro ou Pix — sem IOF e sem spread bancário. Nossa calculadora de imposto Paraguai compara todas as formas de pagamento automaticamente.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">🧮 Como usar o simulador de imposto Paraguai</h2>
+          <p>Digite o valor em dólar da sua compra, escolha a forma de pagamento e selecione seu banco. O resultado aparece em segundos com cotação do Banco Central atualizada a cada 30 minutos.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-2">
           {[
+            { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
+            { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
+            { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
+            { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
+            { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
+            { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletronicos no Paraguai' },
+            { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
             { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
             { href: '/como-declarar-paraguai',  icon: '📋', label: 'Como declarar na Receita?' },
             { href: '/o-que-comprar-paraguai',  icon: '🛍️', label: 'O que vale a pena comprar?' },
@@ -223,4 +234,5 @@ export default function Home() {
     </main>
   )
 }
+
 
