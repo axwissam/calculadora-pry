@@ -6,9 +6,8 @@ export default function BannerNomad() {
       style={{ background: '#F5C800', display: 'flex', alignItems: 'center', borderRadius: 16, textDecoration: 'none', overflow: 'hidden', minHeight: 72 }}>
       <div style={{ padding: '0 20px', flexShrink: 0 }}>
         <svg width="52" height="52" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 85V15L50 85V15" stroke="#1a1a1a" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M62 50C62 30 85 15 85 15V85" stroke="#1a1a1a" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M62 50C62 70 85 85 85 85" stroke="#1a1a1a" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M8 82V18L42 82V18" stroke="#1a1a1a" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M52 82V18L86 82V18" stroke="#1a1a1a" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </div>
       <div style={{ width: 1, background: 'rgba(0,0,0,0.15)', alignSelf: 'stretch', margin: '12px 0' }} />
@@ -24,3 +23,4 @@ export default function BannerNomad() {
     </a>
   )
 }
+
