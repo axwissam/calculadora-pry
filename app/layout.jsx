@@ -1,9 +1,12 @@
-import './globals.css'
+﻿import './globals.css'
 
 export const metadata = {
   title: 'Calculadora de Compras Paraguai 2026 - Cota e Impostos',
   description: 'Calcule quanto vai pagar em reais nas compras do Paraguai. Cota de US$ 500, imposto de 50% sobre excedente, IOF e spread bancário incluídos.',
   keywords: 'calculadora paraguai 2026, cota paraguai, imposto compras paraguai, limite compras paraguai',
+  verification: {
+    google: 'FvyVSV9GmSQ3VcCeGuRSAzhrmRZYQgxVenkPzl24xM0',
+  },
   openGraph: {
     title: 'Calculadora de Compras Paraguai 2026',
     description: 'Cota de US$ 500, impostos e câmbio em tempo real.',
@@ -20,3 +23,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
