@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#16a34a"/>
+  <circle cx="1050" cy="100" r="220" fill="#15803d" opacity="0.5"/>
+  <circle cx="150" cy="530" r="160" fill="#15803d" opacity="0.4"/>
+  <rect x="80" y="90" width="1040" height="450" rx="32" fill="white" opacity="0.12"/>
+  <rect x="120" y="130" width="80" height="26" rx="4" fill="#d52b1e"/>
+  <rect x="120" y="156" width="80" height="26" rx="4" fill="white"/>
+  <rect x="120" y="182" width="80" height="26" rx="4" fill="#0038a8"/>
+  <text x="220" y="165" font-family="system-ui,sans-serif" font-size="52" font-weight="700" fill="white">Calculadora Paraguai 2026</text>
+  <text x="220" y="215" font-family="system-ui,sans-serif" font-size="26" fill="rgba(255,255,255,0.85)">Cota, impostos e câmbio em tempo real</text>
+  <line x1="120" y1="255" x2="1080" y2="255" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+  <rect x="120" y="275" width="280" height="140" rx="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="260" y="330" font-family="system-ui,sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">Cota de isenção</text>
+  <text x="260" y="385" font-family="system-ui,sans-serif" font-size="42" font-weight="700" fill="white" text-anchor="middle">US$ 500</text>
+  <rect x="460" y="275" width="280" height="140" rx="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="600" y="330" font-family="system-ui,sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">Imposto excedente</text>
+  <text x="600" y="385" font-family="system-ui,sans-serif" font-size="42" font-weight="700" fill="white" text-anchor="middle">50%</text>
+  <rect x="800" y="275" width="280" height="140" rx="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="940" y="330" font-family="system-ui,sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">Cotação automática</text>
+  <text x="940" y="385" font-family="system-ui,sans-serif" font-size="42" font-weight="700" fill="white" text-anchor="middle">30 min</text>
+  <text x="600" y="580" font-family="system-ui,sans-serif" font-size="22" fill="rgba(255,255,255,0.55)" text-anchor="middle">calculadora-paraguai.vercel.app</text>
+</svg>
