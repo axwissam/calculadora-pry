@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import BannerNomad from './components/BannerNomad'
 
 const BANCOS_PIX    = ['Nubank', 'Inter', 'C6 Bank', 'Itaú', 'Bradesco', 'Santander', 'Pix Geral']
-const BANCOS_CARTAO = ['Nubank', 'Inter', 'C6 Bank', 'Itaú', 'Bradesco', 'Santander']
+const BANCOS_CARTAO = ['Nomad', 'Nubank', 'Inter', 'C6 Bank', 'Itaú', 'Bradesco', 'Santander']
 const fmt    = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v)
 const fmtUSD = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'USD' }).format(v)
 
@@ -223,3 +223,4 @@ export default function Home() {
     </main>
   )
 }
+
