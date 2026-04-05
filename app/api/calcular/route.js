@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+﻿import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -48,6 +48,7 @@ export async function POST(request) {
   }
 
   const cotacao = parseFloat(cotacaoData.valor_dolar)
+  const BANCOS_SEM_IOF = ['nomad', 'wise']
   let spread = 0, iof = 0
 
   if (tipo_pagamento !== 'dinheiro' && banco) {
@@ -62,6 +63,7 @@ export async function POST(request) {
     if (spreadData) {
       spread = parseFloat(spreadData.taxa_spread)
       iof = parseFloat(spreadData.iof)
+      if (BANCOS_SEM_IOF.includes(banco?.toLowerCase())) iof = 0
     }
   }
 
@@ -81,3 +83,4 @@ export async function POST(request) {
 
   return Response.json(resultado)
 }
+
