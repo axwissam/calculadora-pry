@@ -11,6 +11,7 @@ const fmtUSD = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', curren
 
 function useCalculadora() {
   const [valorUSD, setValorUSD]   = useState('')
+  const [moeda, setMoeda]         = useState('USD')
   const [tipo, setTipo]           = useState('dinheiro')
   const [banco, setBanco]         = useState('')
   const [resultado, setResultado] = useState(null)
@@ -23,7 +24,8 @@ function useCalculadora() {
   }, [])
 
   const calcular = useCallback(async () => {
-    const usd = parseFloat(String(valorUSD).replace(',', '.'))
+    const raw = parseFloat(String(valorUSD).replace(',', '.'))
+    const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
     if (!usd || usd <= 0) { setResultado(null); return }
     setLoading(true); setError(null)
     try {
@@ -40,7 +42,11 @@ function useCalculadora() {
   }, [valorUSD, tipo, banco])
 
   useEffect(() => { const t = setTimeout(calcular, 400); return () => clearTimeout(t) }, [calcular])
-  return { valorUSD, setValorUSD, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error }
+  const usdEfetivo = moeda === 'BRL' && cotacao?.valor_dolar
+    ? parseFloat(String(valorUSD).replace(',', '.')) / cotacao.valor_dolar
+    : null
+
+  return { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, usdEfetivo }
 }
 
 const NOMAD_LINK = 'https://nomad.onelink.me/wIQT/Travel?code=1ER33NDKPF%26n=Alex'
@@ -155,7 +161,7 @@ function CotacaoBar({ cotacao }) {
 }
 
 export default function Home() {
-  const { valorUSD, setValorUSD, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error } = useCalculadora()
+  const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, usdEfetivo } = useCalculadora()
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-10 pb-8 text-white">
@@ -166,13 +172,17 @@ export default function Home() {
 
       <div className="px-4 -mt-4 space-y-4">
         <div className="bg-white rounded-2xl shadow-md p-5">
-          <label className="block text-sm font-medium text-gray-600 mb-1">Valor em dólar (US$)</label>
-          <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">US$</span>
-            <input type="number" inputMode="decimal" placeholder="0,00" value={valorUSD}
-              onChange={e => setValorUSD(e.target.value)}
-              className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
+          <div className="flex items-center justify-between mb-1">
+            <label className="text-sm font-medium text-gray-600">{moeda === 'USD' ? 'Valor em dólar (US$)' : 'Valor em real (R$)'}</label>
+            <div className="flex rounded-lg overflow-hidden border border-gray-200 text-xs font-bold">
+              <button onClick={() => { setMoeda('USD'); setValorUSD('') }}
+                className={`px-3 py-1 ${moeda === 'USD' ? 'bg-green-500 text-white' : 'bg-white text-gray-500'}`}>USD</button>
+              <button onClick={() => { setMoeda('BRL'); setValorUSD('') }}
+                className={`px-3 py-1 ${moeda === 'BRL' ? 'bg-green-500 text-white' : 'bg-white text-gray-500'}`}>BRL</button>
+            </div>
           </div>
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">{moeda === 'USD' ? 'US
           <div className="mt-4">
             <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
             <div className="grid grid-cols-3 gap-2">
@@ -234,5 +244,153 @@ export default function Home() {
     </main>
   )
 }
+
+
+
+
+
+
+ : 'R
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
+            <div className="grid grid-cols-3 gap-2">
+              {[{ key: 'dinheiro', icon: '💵', label: 'Dinheiro' }, { key: 'pix', icon: '📱', label: 'Pix' }, { key: 'credito', icon: '💳', label: 'Cartão' }].map(({ key, icon, label }) => (
+                <button key={key} onClick={() => { setTipo(key); setBanco('') }}
+                  className={`py-3 rounded-xl text-sm font-medium transition-all ${tipo === key ? 'bg-green-500 text-white shadow-sm' : 'bg-gray-100 text-gray-600'}`}>
+                  {icon} {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <BancoSelector tipo={tipo} banco={banco} setBanco={setBanco} />
+          {loading && <div className="mt-3 text-center text-sm text-gray-400 animate-pulse">Calculando...</div>}
+          {error && <div className="mt-3 bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-sm text-red-600">⚠️ {error}</div>}
+        </div>
+
+        <ResultadoCard resultado={resultado} />
+        <ComparativoSection valorUSD={valorUSD} />
+
+        <BannerNomad />
+
+        {/* Bloco de conteúdo SEO — "isca" para AdSense e Google */}
+        <div className="bg-white rounded-2xl p-5 shadow-sm text-sm text-gray-600 space-y-3">
+          <h2 className="font-bold text-gray-800 text-base">📋 Cota de compras no Paraguai em 2026</h2>
+          <p>A cota de isenção para compras no Paraguai em 2026 é de <strong>US$ 500 por pessoa via terrestre</strong> (Ponte da Amizade / Pedro Juan Caballero). Para viagens aéreas, o limite sobe para <strong>US$ 1.000 por pessoa</strong>.</p>
+          <p>Valores acima da cota são tributados em <strong>50% de imposto de importação</strong> sobre o excedente. Por exemplo: se você comprou US$ 800, paga 50% sobre os US$ 300 excedentes — ou seja, US$ 150 de imposto convertidos pela cotação do dia.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">💳 IOF e spread: os custos escondidos</h2>
+          <p>Além do imposto de importação, pagamentos com cartão têm <strong>IOF de 3,5%</strong> e spread bancário de até 7%. Bancos como Nomad e Wise não cobram IOF na compra — o imposto já foi pago na conversão de reais para dólar.</p>
+          <p><strong>Dica:</strong> Para economizar ao máximo, prefira pagar em dinheiro ou Pix — sem IOF e sem spread bancário. Nossa calculadora de imposto Paraguai compara todas as formas de pagamento automaticamente.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">🧮 Como usar o simulador de imposto Paraguai</h2>
+          <p>Digite o valor em dólar da sua compra, escolha a forma de pagamento e selecione seu banco. O resultado aparece em segundos com cotação do Banco Central atualizada a cada 30 minutos.</p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-2">
+          {[
+            { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
+            { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
+            { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
+            { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
+            { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
+            { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletronicos no Paraguai' },
+            { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
+            { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
+            { href: '/como-declarar-paraguai',  icon: '📋', label: 'Como declarar na Receita?' },
+            { href: '/o-que-comprar-paraguai',  icon: '🛍️', label: 'O que vale a pena comprar?' },
+          ].map(({ href, icon, label }) => (
+            <Link key={href} href={href}
+              className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">{icon}</span><span>{label}</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center py-2">
+          <Link href="/privacidade" className="text-xs text-gray-400 hover:text-gray-600">Política de Privacidade</Link>
+        </div>
+      </div>
+    </main>
+  )
+}
+
+
+
+
+
+
+}</span>
+            <input type="number" inputMode="decimal" placeholder="0,00" value={valorUSD}
+              onChange={e => setValorUSD(e.target.value)}
+              className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
+          </div>
+          {moeda === 'BRL' && valorUSD && cotacao?.valor_dolar && (
+            <p className="text-xs text-gray-400 mt-1">≈ US$ {(parseFloat(String(valorUSD).replace(',','.' )) / cotacao.valor_dolar).toFixed(2)} na cotação atual</p>
+          )}
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
+            <div className="grid grid-cols-3 gap-2">
+              {[{ key: 'dinheiro', icon: '💵', label: 'Dinheiro' }, { key: 'pix', icon: '📱', label: 'Pix' }, { key: 'credito', icon: '💳', label: 'Cartão' }].map(({ key, icon, label }) => (
+                <button key={key} onClick={() => { setTipo(key); setBanco('') }}
+                  className={`py-3 rounded-xl text-sm font-medium transition-all ${tipo === key ? 'bg-green-500 text-white shadow-sm' : 'bg-gray-100 text-gray-600'}`}>
+                  {icon} {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <BancoSelector tipo={tipo} banco={banco} setBanco={setBanco} />
+          {loading && <div className="mt-3 text-center text-sm text-gray-400 animate-pulse">Calculando...</div>}
+          {error && <div className="mt-3 bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-sm text-red-600">⚠️ {error}</div>}
+        </div>
+
+        <ResultadoCard resultado={resultado} />
+        <ComparativoSection valorUSD={valorUSD} />
+
+        <BannerNomad />
+
+        {/* Bloco de conteúdo SEO — "isca" para AdSense e Google */}
+        <div className="bg-white rounded-2xl p-5 shadow-sm text-sm text-gray-600 space-y-3">
+          <h2 className="font-bold text-gray-800 text-base">📋 Cota de compras no Paraguai em 2026</h2>
+          <p>A cota de isenção para compras no Paraguai em 2026 é de <strong>US$ 500 por pessoa via terrestre</strong> (Ponte da Amizade / Pedro Juan Caballero). Para viagens aéreas, o limite sobe para <strong>US$ 1.000 por pessoa</strong>.</p>
+          <p>Valores acima da cota são tributados em <strong>50% de imposto de importação</strong> sobre o excedente. Por exemplo: se você comprou US$ 800, paga 50% sobre os US$ 300 excedentes — ou seja, US$ 150 de imposto convertidos pela cotação do dia.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">💳 IOF e spread: os custos escondidos</h2>
+          <p>Além do imposto de importação, pagamentos com cartão têm <strong>IOF de 3,5%</strong> e spread bancário de até 7%. Bancos como Nomad e Wise não cobram IOF na compra — o imposto já foi pago na conversão de reais para dólar.</p>
+          <p><strong>Dica:</strong> Para economizar ao máximo, prefira pagar em dinheiro ou Pix — sem IOF e sem spread bancário. Nossa calculadora de imposto Paraguai compara todas as formas de pagamento automaticamente.</p>
+          <h2 className="font-bold text-gray-800 text-base mt-2">🧮 Como usar o simulador de imposto Paraguai</h2>
+          <p>Digite o valor em dólar da sua compra, escolha a forma de pagamento e selecione seu banco. O resultado aparece em segundos com cotação do Banco Central atualizada a cada 30 minutos.</p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-2">
+          {[
+            { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
+            { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
+            { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
+            { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
+            { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
+            { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletronicos no Paraguai' },
+            { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
+            { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
+            { href: '/como-declarar-paraguai',  icon: '📋', label: 'Como declarar na Receita?' },
+            { href: '/o-que-comprar-paraguai',  icon: '🛍️', label: 'O que vale a pena comprar?' },
+          ].map(({ href, icon, label }) => (
+            <Link key={href} href={href}
+              className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">{icon}</span><span>{label}</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center py-2">
+          <Link href="/privacidade" className="text-xs text-gray-400 hover:text-gray-600">Política de Privacidade</Link>
+        </div>
+      </div>
+    </main>
+  )
+}
+
+
+
+
+
 
 
