@@ -24,7 +24,8 @@ function useCalculadora() {
   }, [])
 
   const calcular = useCallback(async () => {
-    const usd = parseFloat(String(valorUSD).replace(',', '.'))
+    const raw = parseFloat(String(valorUSD).replace(',', '.'))
+    const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
     if (!usd || usd <= 0) { setResultado(null); return }
     setLoading(true); setError(null)
     try {
@@ -41,7 +42,7 @@ function useCalculadora() {
   }, [valorUSD, tipo, banco])
 
   useEffect(() => { const t = setTimeout(calcular, 400); return () => clearTimeout(t) }, [calcular])
-  return { valorUSD, setValorUSD, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error }
+  return { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error }
 }
 
 const NOMAD_LINK = 'https://nomad.onelink.me/wIQT/Travel?code=1ER33NDKPF%26n=Alex'
