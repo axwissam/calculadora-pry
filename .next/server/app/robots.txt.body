@@ -1,6 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /admin
-Disallow: /api/
-
-Sitemap: https://calculadora-paraguai.vercel.app/sitemap.xml
