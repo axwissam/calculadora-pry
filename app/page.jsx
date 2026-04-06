@@ -10,6 +10,7 @@ const fmt    = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', curren
 const fmtUSD = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'USD' }).format(v)
 
 function useCalculadora() {
+  const [moeda, setMoeda]         = useState('USD')
   const [valorUSD, setValorUSD]   = useState('')
   const [tipo, setTipo]           = useState('dinheiro')
   const [banco, setBanco]         = useState('')
@@ -155,7 +156,7 @@ function CotacaoBar({ cotacao }) {
 }
 
 export default function Home() {
-  const { valorUSD, setValorUSD, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error } = useCalculadora()
+  const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error } = useCalculadora()
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-10 pb-8 text-white">
@@ -166,9 +167,17 @@ export default function Home() {
 
       <div className="px-4 -mt-4 space-y-4">
         <div className="bg-white rounded-2xl shadow-md p-5">
-          <label className="block text-sm font-medium text-gray-600 mb-1">Valor em dólar (US$)</label>
+          <div className="flex items-center justify-between mb-1">
+            <label className="text-sm font-medium text-gray-600">{moeda === 'USD' ? 'Valor em dólar (US$)' : 'Valor em real (R$)'}</label>
+            <div className="flex rounded-lg overflow-hidden border border-gray-200 text-xs font-semibold">
+              <button onClick={() => setMoeda('USD')}
+                className={`px-3 py-1 ${moeda === 'USD' ? 'bg-green-500 text-white' : 'bg-white text-gray-500'}`}>USD</button>
+              <button onClick={() => setMoeda('BRL')}
+                className={`px-3 py-1 ${moeda === 'BRL' ? 'bg-green-500 text-white' : 'bg-white text-gray-500'}`}>BRL</button>
+            </div>
+          </div>
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">US$</span>
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">{moeda === 'USD' ? 'US$' : 'R$'}</span>
             <input type="number" inputMode="decimal" placeholder="0,00" value={valorUSD}
               onChange={e => setValorUSD(e.target.value)}
               className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
@@ -234,5 +243,3 @@ export default function Home() {
     </main>
   )
 }
-
-
