@@ -169,7 +169,7 @@ export default function Home() {
         <div className="bg-white rounded-2xl shadow-md p-5">
           <div className="flex items-center justify-between mb-1">
             <label className="text-sm font-medium text-gray-600">{moeda === 'USD' ? 'Valor em dólar (US$)' : 'Valor em real (R$)'}</label>
-            <div className="flex rounded-lg overflow-hidden border border-gray-200 text-xs font-semibold">
+            <div className="flex rounded-lg border border-gray-200 text-xs font-semibold">
               <button onClick={() => setMoeda('USD')}
                 className={`px-3 py-1 ${moeda === 'USD' ? 'bg-green-500 text-white' : 'bg-white text-gray-500'}`}>USD</button>
               <button onClick={() => setMoeda('BRL')}
