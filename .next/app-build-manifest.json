@@ -1,0 +1,147 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/app/_not-found/page-12606ae75f3b0504.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/css/a83debba308d04de.css",
+      "static/chunks/app/layout-7dd85e0098d73d35.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/page-9356b1a9c1c5e009.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/admin/page-cf008a3bd7a0deae.js"
+    ],
+    "/cota-paraguai-via-terrestre/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/cota-paraguai-via-terrestre/page-cec4028ad365cc94.js"
+    ],
+    "/calculadora-dolar-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/calculadora-dolar-paraguai/page-687c10c8441cb9d4.js"
+    ],
+    "/como-calcular-imposto-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/como-calcular-imposto-paraguai/page-ef45983198d75f7c.js"
+    ],
+    "/eletronicos-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/eletronicos-paraguai/page-7be137fa1e52a3f9.js"
+    ],
+    "/imposto-iphone-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/imposto-iphone-paraguai/page-6f068322f5a8dddc.js"
+    ],
+    "/como-declarar-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/como-declarar-paraguai/page-60df036058cdcbeb.js"
+    ],
+    "/limite-compras-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/limite-compras-paraguai/page-a03d1296d1d2a26b.js"
+    ],
+    "/nomad-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/nomad-paraguai/page-8965f17f1c238793.js"
+    ],
+    "/melhor-forma-pagamento-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/melhor-forma-pagamento-paraguai/page-70d142f12e1323cb.js"
+    ],
+    "/o-que-comprar-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/o-que-comprar-paraguai/page-d5a22f13598923c2.js"
+    ],
+    "/privacidade/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/privacidade/page-ab473feba72fc87f.js"
+    ],
+    "/perfume-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/perfume-paraguai/page-ddb14fde6d6f4ad7.js"
+    ],
+    "/quanto-custa-viajar-cidade-del-este/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/quanto-custa-viajar-cidade-del-este/page-ab6399bab686f8c1.js"
+    ],
+    "/quanto-de-imposto-pagar-no-paraguai/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-1f4c605cebad2e8d.js",
+      "static/chunks/23-7c1aca579f01d6df.js",
+      "static/chunks/main-app-24bf53c03f01b5f3.js",
+      "static/chunks/231-807b26e35e68f2f5.js",
+      "static/chunks/app/quanto-de-imposto-pagar-no-paraguai/page-d2f4eddcaa03be05.js"
+    ]
+  }
+}
