@@ -108,13 +108,21 @@ export default function DutyFreeFoz() {
         </div>
 
         <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-2">📍 Onde fica o Duty Free?</h2>
-          <p className="text-gray-600 text-sm">Ha duas lojas duty free na regiao:</p>
-          <ul className="text-gray-600 text-sm mt-2 space-y-1.5">
-            <li>• <strong>Saida do Brasil:</strong> na Ponte da Amizade, antes do controle aduaneiro paraguaio</li>
-            <li>• <strong>Retorno ao Brasil:</strong> apos o controle aduaneiro brasileiro, ainda na ponte</li>
-          </ul>
-          <p className="text-gray-500 text-xs mt-3">Dica: a loja da volta costuma ter mais movimento. Va cedo para evitar filas.</p>
+          <h2 className="text-lg font-bold text-gray-800 mb-2">📍 Onde ficam as lojas Duty Free?</h2>
+          <p className="text-gray-600 text-sm mb-3">As principais lojas duty free da região ficam nos shoppings de Foz do Iguaçu:</p>
+          <div className="space-y-3">
+            <div className="bg-gray-50 rounded-xl p-3">
+              <p className="font-semibold text-gray-800 text-sm">🛍️ Shopping Catuaí Palladium</p>
+              <p className="text-gray-500 text-xs mt-1">Av. das Cataratas, 3000 — Foz do Iguaçu, PR</p>
+              <p className="text-gray-600 text-xs mt-1">Principal destino duty free da cidade. Lojas com perfumes, bebidas, cosméticos e eletrônicos isentos de imposto para quem tem passaporte carimbado.</p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-3">
+              <p className="font-semibold text-gray-800 text-sm">🌉 Ponte da Amizade</p>
+              <p className="text-gray-500 text-xs mt-1">BR-277, Foz do Iguaçu — acesso ao Paraguai</p>
+              <p className="text-gray-600 text-xs mt-1">Lojas duty free disponíveis na saída e retorno pela ponte, com foco em bebidas e cigarros.</p>
+            </div>
+          </div>
+          <p className="text-gray-500 text-xs mt-3">💡 Dica: leve seu passaporte carimbado para ter acesso aos preços duty free nas lojas dos shoppings.</p>
         </div>
 
         <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-purple-300 transition-colors">
