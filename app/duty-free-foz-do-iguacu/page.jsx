@@ -116,11 +116,6 @@ export default function DutyFreeFoz() {
               <p className="text-gray-500 text-xs mt-1">Av. das Cataratas, 3000 — Foz do Iguaçu, PR</p>
               <p className="text-gray-600 text-xs mt-1">Principal destino duty free da cidade. Lojas com perfumes, bebidas, cosméticos e eletrônicos isentos de imposto para quem tem passaporte carimbado.</p>
             </div>
-            <div className="bg-gray-50 rounded-xl p-3">
-              <p className="font-semibold text-gray-800 text-sm">🌉 Ponte da Amizade</p>
-              <p className="text-gray-500 text-xs mt-1">BR-277, Foz do Iguaçu — acesso ao Paraguai</p>
-              <p className="text-gray-600 text-xs mt-1">Lojas duty free disponíveis na saída e retorno pela ponte, com foco em bebidas e cigarros.</p>
-            </div>
           </div>
           <p className="text-gray-500 text-xs mt-3">💡 Dica: leve seu passaporte carimbado para ter acesso aos preços duty free nas lojas dos shoppings.</p>
         </div>
