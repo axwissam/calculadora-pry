@@ -129,6 +129,23 @@ export default function LojasParaguai() {
         </div>
 
       </div>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Melhores Lojas do Paraguai em 2026",
+    "description": "As lojas mais confiáveis de Ciudad del Este, Paraguai",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Store", "name": "Shopping China", "address": { "@type": "PostalAddress", "streetAddress": "Av. Bernardino Caballero", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Store", "name": "Flytec Computers", "address": { "@type": "PostalAddress", "streetAddress": "Av. Monseñor Rodríguez", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Store", "name": "Mobile Zone", "address": { "@type": "PostalAddress", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Store", "name": "Visão VIP", "address": { "@type": "PostalAddress", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Store", "name": "Star Company", "address": { "@type": "PostalAddress", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "Store", "name": "Elegancia Company", "address": { "@type": "PostalAddress", "addressLocality": "Ciudad del Este", "addressCountry": "PY" } } }
+    ]
+  }) }}
+/>
     </main>
   )
 }

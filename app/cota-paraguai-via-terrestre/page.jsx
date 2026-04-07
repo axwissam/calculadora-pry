@@ -79,6 +79,31 @@ export default function CotaViaTerrestre() {
           </Link>
         </div>
       </div>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Qual é a cota do Paraguai via terrestre em 2026?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "US$ 500 por pessoa por viagem via terrestre pela Ponte da Amizade ou Pedro Juan Caballero."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Com que frequência posso ir ao Paraguai?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Não há limite de frequência, mas a cota de US$ 500 se aplica a cada viagem."
+    }
+  }
+]
+  }) }}
+/>
     </main>
   )
 }

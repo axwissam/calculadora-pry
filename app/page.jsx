@@ -159,6 +159,20 @@ function CotacaoBar({ cotacao }) {
 export default function Home() {
   const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error } = useCalculadora()
   return (
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calculadora de Imposto Paraguai 2026",
+    "url": "https://calculadora-pry.vercel.app",
+    "description": "Calcule o imposto e custo total das suas compras no Paraguai com cotação do Banco Central em tempo real.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+  }) }}
+/>
     <main className="min-h-screen bg-gray-50 pb-20">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-10 pb-8 text-white">
         <h1 className="text-2xl font-bold">🇵🇾 Calculadora Paraguai 2026</h1>
@@ -250,5 +264,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   )
 }

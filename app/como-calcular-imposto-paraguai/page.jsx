@@ -47,6 +47,31 @@ export default function ComoCalcularImposto() {
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora</Link>
         </div>
       </div>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Como calcular o imposto do Paraguai?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Subtraia US$ 500 do valor total. O excedente é multiplicado por 50% para obter o imposto. Ex: comprou US$ 800, paga 50% de US$ 300 = US$ 150."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "O imposto do Paraguai é sobre o total ou só o excedente?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Apenas sobre o excedente acima dos US$ 500 de cota."
+    }
+  }
+]
+  }) }}
+/>
     </main>
   )
 }

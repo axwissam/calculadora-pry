@@ -62,6 +62,31 @@ export default function MelhorFormaPagamento() {
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
       </div>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Qual a melhor forma de pagar no Paraguai?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dinheiro ou Pix são as melhores opções por não terem IOF nem spread. Cartões internacionais como Nomad e Wise também são boas opções."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Tem IOF nas compras no Paraguai com cartão?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim, cartões comuns cobram IOF de 3,5%. Cartões como Nomad e Wise não cobram IOF adicional na compra."
+    }
+  }
+]
+  }) }}
+/>
     </main>
   )
 }

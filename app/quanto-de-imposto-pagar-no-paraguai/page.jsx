@@ -43,6 +43,39 @@ export default function QuantoDeImposto() {
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora</Link>
         </div>
       </div>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Quanto de imposto pagar no Paraguai em 2026?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Acima da cota de US$ 500, você paga 50% de imposto sobre o valor excedente. Abaixo da cota, é isento."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Qual é a cota de isenção do Paraguai?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A cota é de US$ 500 por pessoa por viagem via terrestre e US$ 1.000 por via aérea."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Posso somar a cota com minha família?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sim, cada pessoa tem US$ 500 de cota individual, incluindo crianças. Uma família de 4 pode trazer até US$ 2.000 sem pagar imposto."
+    }
+  }
+]
+  }) }}
+/>
     </main>
   )
 }
