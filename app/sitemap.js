@@ -16,6 +16,8 @@ export default function sitemap() {
     { url: `${base}/como-declarar-paraguai`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/o-que-comprar-paraguai`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/quanto-custa-viajar-cidade-del-este`,   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/seguro-viagem-paraguai`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/duty-free-foz-do-iguacu`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
