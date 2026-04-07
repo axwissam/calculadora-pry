@@ -217,24 +217,13 @@ export default function Home() {
         </div>
 
         <Link href="/lojas-paraguai" className="block bg-white rounded-2xl shadow-sm border border-green-100 p-4 hover:border-green-300 transition-colors">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🏪</span>
-            <div>
-              <p className="font-bold text-gray-800 text-sm">Melhores lojas do Paraguai</p>
-              <p className="text-xs text-gray-500">Shopping China, Flytec, Mobile Zone e mais</p>
-            </div>
-            <span className="ml-auto text-green-500 font-bold">→</span>
+        <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+          <span className="text-3xl">🏪</span>
+          <div>
+            <p className="font-bold text-gray-800 text-sm">Melhores lojas do Paraguai</p>
+            <p className="text-xs text-gray-500">Shopping China, Flytec, Mobile Zone e mais</p>
           </div>
-        </Link>
-        <Link href="/lojas-paraguai" className="block bg-white rounded-2xl shadow-sm border border-green-100 p-4 hover:border-green-300 transition-colors">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🏪</span>
-            <div>
-              <p className="font-bold text-gray-800 text-sm">Melhores lojas do Paraguai</p>
-              <p className="text-xs text-gray-500">Shopping China, Flytec, Mobile Zone e mais</p>
-            </div>
-            <span className="ml-auto text-green-500 font-bold">→</span>
-          </div>
+          <span className="ml-auto text-green-500 font-bold">→</span>
         </Link>
         <div className="grid grid-cols-1 gap-2">
           {[
