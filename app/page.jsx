@@ -216,7 +216,6 @@ export default function Home() {
           <p>Digite o valor em dólar da sua compra, escolha a forma de pagamento e selecione seu banco. O resultado aparece em segundos com cotação do Banco Central atualizada a cada 30 minutos.</p>
         </div>
 
-        <Link href="/lojas-paraguai" className="block bg-white rounded-2xl shadow-sm border border-green-100 p-4 hover:border-green-300 transition-colors">
         <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
           <span className="text-3xl">🏪</span>
           <div>
