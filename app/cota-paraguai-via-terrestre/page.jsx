@@ -79,6 +79,7 @@ export default function CotaViaTerrestre() {
             Abrir Calculadora →
           </Link>
         </div>
+        <BannerNomad />
       </div>
 <script
   type="application/ld+json"

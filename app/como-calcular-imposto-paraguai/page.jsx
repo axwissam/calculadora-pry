@@ -47,6 +47,7 @@ export default function ComoCalcularImposto() {
           <p className="font-bold text-green-800 mb-3">Calculadora de imposto paraguai online</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora</Link>
         </div>
+        <BannerNomad />
       </div>
 <script
   type="application/ld+json"

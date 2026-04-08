@@ -129,6 +129,7 @@ export default function LojasParaguai() {
           </Link>
         </div>
 
+        <BannerNomad />
       </div>
 <script
   type="application/ld+json"
