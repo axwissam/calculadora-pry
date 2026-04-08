@@ -151,7 +151,7 @@ function CotacaoBar({ cotacao }) {
   return (
     <div className="mt-3 inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 text-sm">
       <span className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
-      Dólar: {fmt(cotacao.valor_dolar)} · atualizado {tempoStr}
+      Dólar: {fmt(cotacao.valor_dolar)} · {tempoStr}
     </div>
   )
 }
