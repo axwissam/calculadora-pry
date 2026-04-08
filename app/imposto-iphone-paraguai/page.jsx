@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Imposto iPhone Paraguai 2026 - Quanto pagar? | Calculadora Paraguai',
   description: 'Quanto de imposto voce paga para trazer iPhone do Paraguai em 2026? Calcule o preco final com cota, IOF e cambio.',
@@ -50,6 +51,8 @@ export default function ImpostoIphoneParaguai() {
           <p className="font-bold text-green-800 mb-3">Calcule o preco exato do seu iPhone</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora</Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

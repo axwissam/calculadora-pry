@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Política de Privacidade | Calculadora Paraguai 2026',
@@ -40,6 +41,8 @@ export default function Privacidade() {
         <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold mt-4">
           Voltar para a Calculadora →
         </Link>
+      
+        <BannerNomad />
       </div>
     </main>
   )

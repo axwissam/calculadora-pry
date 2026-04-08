@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Quanto custa viajar para Ciudad del Este em 2026? | Calculadora Paraguai',
@@ -82,6 +83,8 @@ export default function QuantoCustaViajar() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

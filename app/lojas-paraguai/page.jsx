@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 import Image from 'next/image'
 
 export const metadata = {

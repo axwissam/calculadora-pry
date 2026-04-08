@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Vale a pena usar o Nomad no Paraguai em 2026? | Calculadora Paraguai',
   description: 'O cartão Nomad é uma boa opção para compras no Paraguai? Veja taxas, IOF, spread e compare com dinheiro e Pix.',
@@ -52,6 +53,8 @@ export default function NomadParaguai() {
           <p className="text-blue-600 text-sm mb-4">Nossa calculadora mostra o custo exato com câmbio em tempo real.</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

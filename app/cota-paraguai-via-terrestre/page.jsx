@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Cota Paraguai Via Terrestre 2026 - Limite e Regras | Calculadora Paraguai',

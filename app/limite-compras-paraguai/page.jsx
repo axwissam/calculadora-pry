@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Qual o limite de compras no Paraguai em 2026? | Calculadora Paraguai',
@@ -59,6 +60,8 @@ export default function LimiteParaguai() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

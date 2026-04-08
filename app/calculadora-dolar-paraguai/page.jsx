@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Calculadora Dólar Paraguai 2026 — Quanto vale em reais? | Calculadora Paraguai',
   description: 'Converta dólar para real nas compras do Paraguai em 2026. Calcule com câmbio atualizado, impostos, IOF e spread bancário incluídos.',
@@ -59,6 +60,8 @@ export default function CalculadoraDolarParaguai() {
           <p className="text-blue-600 text-sm mb-4">Cotação atualizada a cada 30 minutos direto do Banco Central.</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

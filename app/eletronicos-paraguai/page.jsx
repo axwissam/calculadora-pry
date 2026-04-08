@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Eletronicos no Paraguai 2026 - Vale a pena? Precos e Dicas | Calculadora Paraguai',
@@ -82,6 +83,8 @@ export default function EletronicosParaguai() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

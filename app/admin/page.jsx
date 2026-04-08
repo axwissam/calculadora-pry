@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -94,6 +95,8 @@ export default async function AdminPage() {
             </div>
           </div>
         )}
+      
+        <BannerNomad />
       </div>
     </main>
   )

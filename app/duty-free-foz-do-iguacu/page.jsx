@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Duty Free Foz do Iguacu 2026 - O que Comprar e Quanto Pode Trazer | Calculadora Paraguai',
@@ -136,6 +137,8 @@ export default function DutyFreeFoz() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

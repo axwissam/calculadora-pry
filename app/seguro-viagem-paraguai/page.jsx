@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Seguro Viagem Paraguai 2026 - Vale a Pena? Quanto Custa? | Calculadora Paraguai',
@@ -127,6 +128,8 @@ export default function SeguroViagemParaguai() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

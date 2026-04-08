@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Quanto de imposto pagar no Paraguai em 2026? | Calculadora Paraguai',
   description: 'Descubra quanto de imposto voce paga nas compras do Paraguai em 2026. Cota de US$ 500, 50% sobre excedente, IOF e spread explicados com exemplos reais.',

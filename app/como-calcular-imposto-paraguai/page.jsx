@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Como Calcular Imposto Paraguai 2026 - Passo a Passo | Calculadora Paraguai',
   description: 'Aprenda como calcular o imposto de importacao nas compras do Paraguai em 2026. Cota de US$ 500, formula do calculo e simulador online gratuito.',

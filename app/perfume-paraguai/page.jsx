@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Perfume no Paraguai 2026 - Vale a pena? Precos e Marcas | Calculadora Paraguai',
@@ -70,6 +71,8 @@ export default function PerfumeParaguai() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'Como declarar compras no Paraguai em 2026? | Calculadora Paraguai',
@@ -57,6 +58,8 @@ export default function ComoDeclarar() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )

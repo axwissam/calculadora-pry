@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 export const metadata = {
   title: 'Melhor forma de pagamento no Paraguai em 2026 | Calculadora Paraguai',
   description: 'Dinheiro, Pix, cartão ou Nomad? Descubra qual é a melhor forma de pagar no Paraguai em 2026. Comparamos taxas, IOF e spread para você economizar.',

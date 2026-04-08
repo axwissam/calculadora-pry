@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
   title: 'O que vale a pena comprar no Paraguai em 2026? | Calculadora Paraguai',
@@ -64,6 +65,8 @@ export default function OQueComprar() {
             Abrir Calculadora →
           </Link>
         </div>
+      
+        <BannerNomad />
       </div>
     </main>
   )
