@@ -1,4 +1,5 @@
-﻿const NOMAD_LINK = 'https://nomad.onelink.me/wIQT/Travel?code=1ER33NDKPF%26n=Alex'
+﻿'use client'
+const NOMAD_LINK = 'https://nomad.onelink.me/wIQT/Travel?code=1ER33NDKPF%26n=Alex'
 
 export default function BannerNomad() {
   return (
@@ -9,3 +10,4 @@ export default function BannerNomad() {
     </div>
   )
 }
+
