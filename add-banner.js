@@ -7,20 +7,15 @@ const dirs = fs.readdirSync(appDir).filter(d => {
   return fs.statSync(full).isDirectory() && fs.existsSync(path.join(full, 'page.jsx'));
 });
 
+console.log('Paginas encontradas:', dirs);
+
 let count = 0;
 for (const dir of dirs) {
   const file = path.join(appDir, dir, 'page.jsx');
   let c = fs.readFileSync(file, 'utf8');
-  
-  // Pula se ja tem BannerNomad ou se e a home
-  if (c.includes('BannerNomad') || dir === '') continue;
-  
-  // Adiciona import
+  if (c.includes('BannerNomad')) { console.log('SKIP (ja tem):', dir); continue; }
   c = c.replace("import Link from 'next/link'", "import Link from 'next/link'\nimport BannerNomad from '../components/BannerNomad'");
-  
-  // Adiciona banner antes do ultimo </div></main>
   c = c.replace(/(<\/div>\s*<\/main>)(?![\s\S]*<\/div>\s*<\/main>)/, '\n        <BannerNomad />\n      </div>\n    </main>');
-  
   fs.writeFileSync(file, c, 'utf8');
   count++;
   console.log('OK:', dir);
