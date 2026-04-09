@@ -1,10 +1,12 @@
-﻿import Link from 'next/link'
+import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
+
 export const metadata = {
   title: 'Calculadora Dólar Paraguai 2026 — Quanto vale em reais? | Calculadora Paraguai',
-  description: 'Converta dólar para real nas compras do Paraguai em 2026. Calcule com câmbio atualizado, impostos, IOF e spread bancário incluídos.',
-  keywords: 'calculadora dolar paraguai, converter dolar real paraguai 2026, dolar paraguai hoje, cotacao dolar paraguai',
+  description: 'Converta dólar para real nas compras do Paraguai em 2026. Calcule com câmbio atualizado do Banco Central, impostos, IOF e spread bancário incluídos.',
+  keywords: 'calculadora dolar paraguai, converter dolar real paraguai 2026, dolar paraguai hoje, cotacao dolar paraguai, quanto vale dolar paraguai',
 }
+
 export default function CalculadoraDolarParaguai() {
   return (
     <main className="min-h-screen bg-gray-50 pb-16">
@@ -14,11 +16,13 @@ export default function CalculadoraDolarParaguai() {
         <p className="text-green-100 mt-2 text-sm">Converta dólar para real com impostos, IOF e câmbio real incluídos.</p>
       </div>
       <div className="px-4 py-6 max-w-2xl mx-auto space-y-6">
+
         <div className="bg-green-500 rounded-2xl p-5 text-white text-center">
           <p className="font-bold text-xl mb-1">🧮 Use a calculadora agora</p>
-          <p className="text-green-100 text-sm mb-4">Cotação atualizada a cada 30 minutos. Resultado em segundos.</p>
+          <p className="text-green-100 text-sm mb-4">Cotação do dia direto do Banco Central. Resultado em segundos.</p>
           <Link href="/" className="block bg-white text-green-600 font-bold py-3 rounded-xl">Calcular minha compra →</Link>
         </div>
+
         <div className="bg-white rounded-2xl p-5 shadow-sm">
           <h2 className="text-lg font-bold text-gray-800 mb-3">❌ Por que não basta multiplicar pelo dólar?</h2>
           <p className="text-gray-600 text-sm mb-3">Muita gente multiplica o preço em dólar pela cotação do dia e acha que sabe o valor final. Mas no Paraguai existem custos extras que podem aumentar em <strong>15% a 25%</strong> o valor dependendo de como você paga.</p>
@@ -40,8 +44,10 @@ export default function CalculadoraDolarParaguai() {
             ))}
           </div>
         </div>
+
         <div className="bg-white rounded-2xl p-5 shadow-sm">
           <h2 className="text-lg font-bold text-gray-800 mb-3">💱 Dólar turismo vs dólar comercial</h2>
+          <p className="text-gray-600 text-sm mb-3">A cotação que você vê no Google é o <strong>dólar comercial</strong>. Mas nem todo mundo paga por ela:</p>
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="bg-blue-50 rounded-xl p-3">
               <p className="font-bold text-blue-800">Dólar Comercial</p>
@@ -50,17 +56,56 @@ export default function CalculadoraDolarParaguai() {
             </div>
             <div className="bg-orange-50 rounded-xl p-3">
               <p className="font-bold text-orange-800">Dólar Turismo</p>
-              <p className="text-orange-600 mt-1 text-xs">Usado por: bancos, casas de câmbio</p>
+              <p className="text-orange-600 mt-1 text-xs">Usado por: bancos tradicionais</p>
               <p className="text-orange-700 font-semibold mt-2">2% a 5% mais caro ⚠️</p>
             </div>
           </div>
+          <p className="text-gray-500 text-xs mt-3">Nossa calculadora usa o dólar comercial do Banco Central — a cotação mais justa para o consumidor.</p>
         </div>
+
+        <div className="bg-white rounded-2xl p-5 shadow-sm">
+          <h2 className="text-lg font-bold text-gray-800 mb-3">💵 Qual a melhor forma de pagar no Paraguai?</h2>
+          <div className="space-y-2 text-sm">
+            {[
+              { forma: '💵 Dinheiro em espécie', avaliacao: 'Melhor opção', cor: 'green', desc: 'Zero IOF, zero spread, cotação comercial. Mas exige cuidado com segurança.' },
+              { forma: '📱 Pix (via Nomad/Wise)', avaliacao: 'Ótima opção', cor: 'green', desc: 'Sem IOF, spread baixo, seguro e prático.' },
+              { forma: '💳 Cartão Nomad/Wise', avaliacao: 'Boa opção', cor: 'blue', desc: 'Sem IOF, spread de 1-2%. Verifique taxa da maquininha.' },
+              { forma: '💳 Cartão comum (Visa/Master)', avaliacao: 'Evite', cor: 'red', desc: 'IOF 3,5% + spread 4-7% + cotação turismo. Muito mais caro.' },
+            ].map(({ forma, avaliacao, cor, desc }) => (
+              <div key={forma} className={`rounded-xl p-3 ${cor === 'green' ? 'bg-green-50' : cor === 'blue' ? 'bg-blue-50' : 'bg-red-50'}`}>
+                <div className="flex justify-between items-center">
+                  <p className="font-semibold text-gray-800 text-sm">{forma}</p>
+                  <span className={`text-xs font-bold ${cor === 'green' ? 'text-green-700' : cor === 'blue' ? 'text-blue-700' : 'text-red-700'}`}>{avaliacao}</span>
+                </div>
+                <p className="text-gray-500 text-xs mt-1">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl p-5 shadow-sm">
+          <h2 className="text-lg font-bold text-gray-800 mb-3">📊 Exemplo real: iPhone 16 a US$ 799</h2>
+          <div className="space-y-2 text-sm">
+            {[
+              { forma: 'Dinheiro', total: 'R$ 4.155', destaque: true },
+              { forma: 'Nomad/Wise', total: 'R$ 4.238', destaque: false },
+              { forma: 'Cartão comum', total: 'R$ 4.780', destaque: false },
+            ].map(({ forma, total, destaque }) => (
+              <div key={forma} className={`flex justify-between items-center p-3 rounded-xl ${destaque ? 'bg-green-50 border border-green-200' : 'bg-gray-50'}`}>
+                <span className="text-gray-700 text-sm">{forma}</span>
+                <span className={`font-bold ${destaque ? 'text-green-700' : 'text-gray-700'}`}>{total}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-400 text-xs mt-2">* Cotação simulada. Use a calculadora para o valor exato do dia.</p>
+        </div>
+
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5">
           <p className="font-bold text-blue-800 mb-2">🧮 Calcule agora com câmbio real</p>
-          <p className="text-blue-600 text-sm mb-4">Cotação atualizada a cada 30 minutos direto do Banco Central.</p>
+          <p className="text-blue-600 text-sm mb-4">Cotação atualizada direto do Banco Central.</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
-      
+
         <BannerNomad />
       </div>
     </main>
