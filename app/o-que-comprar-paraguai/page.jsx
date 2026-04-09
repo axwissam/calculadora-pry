@@ -13,7 +13,7 @@ const produtos = [
   { emoji: '🌸', nome: 'Perfumes e Cosméticos', desc: 'Importados sem os impostos brasileiros. Um dos produtos com maior vantagem — Chanel, Dior, YSL.', economia: 'Muito alta', exemplo: 'Chanel N°5 100ml: ~US$ 120 (Brasil: R$ 900+)' },
   { emoji: '🎮', nome: 'Games e Acessórios', desc: 'Consoles, jogos e periféricos com diferença expressiva de preço. PS5, Xbox e Nintendo Switch.', economia: 'Alta', exemplo: 'PS5: ~US$ 450 (Brasil: R$ 4.500+)' },
   { emoji: '💊', nome: 'Suplementos', desc: 'Whey, creatina e vitaminas de marcas americanas com preços bem mais atrativos que no Brasil.', economia: 'Média', exemplo: 'Whey 5lbs: ~US$ 60 (Brasil: R$ 400+)' },
-  { emoji: '🧴', nome: 'Produtos de Beleza', desc: 'Maquiagens, cremes e tratamentos de marcas internacionais como MAC, Maybelline e L'Oréal.', economia: 'Alta', exemplo: 'Base MAC: ~US$ 35 (Brasil: R$ 250+)' },
+  { emoji: '🧴', nome: 'Produtos de Beleza', desc: 'Maquiagens, cremes e tratamentos de marcas internacionais como MAC, Maybelline e L’Oréal.', economia: 'Alta', exemplo: 'Base MAC: ~US$ 35 (Brasil: R$ 250+)' },
   { emoji: '💻', nome: 'Notebooks', desc: 'Dell, Lenovo, ASUS e MacBook com diferença significativa. Ideal para quem está dentro da cota.', economia: 'Alta', exemplo: 'MacBook Air M2: ~US$ 999 (Brasil: R$ 9.999+)' },
   { emoji: '⌚', nome: 'Relógios e Smartwatches', desc: 'Apple Watch, Samsung Galaxy Watch e relógios de marcas suíças com ótimo preço.', economia: 'Alta', exemplo: 'Apple Watch SE: ~US$ 180 (Brasil: R$ 1.800+)' },
 ]
