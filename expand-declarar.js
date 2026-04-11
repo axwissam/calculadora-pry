@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs')
+
+const content = `import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
@@ -107,3 +109,7 @@ export default function ComoDeclarar() {
     </main>
   )
 }
+`
+
+fs.writeFileSync('app/como-declarar-paraguai/page.jsx', content, 'utf8')
+console.log('OK - como-declarar-paraguai expandido!')

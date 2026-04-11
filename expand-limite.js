@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs')
+
+const content = `import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
@@ -116,3 +118,7 @@ export default function LimiteComprasParaguai() {
     </main>
   )
 }
+`
+
+fs.writeFileSync('app/limite-compras-paraguai/page.jsx', content, 'utf8')
+console.log('OK - limite-compras-paraguai expandido!')

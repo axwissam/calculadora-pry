@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs')
+
+const content = `import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
@@ -122,3 +124,7 @@ export default function ImpostoIphoneParaguai() {
     </main>
   )
 }
+`
+
+fs.writeFileSync('app/imposto-iphone-paraguai/page.jsx', content, 'utf8')
+console.log('OK - imposto-iphone-paraguai expandido!')

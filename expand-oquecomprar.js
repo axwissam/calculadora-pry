@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs')
+
+const content = `import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
@@ -43,12 +45,12 @@ export default function OQueComprar() {
           <h2 className="text-lg font-bold text-gray-800 mb-3">🏆 Vale a pena x Nao vale</h2>
           <div className="space-y-3">
             {produtos.map(({ emoji, nome, nota, vale, motivo }) => (
-              <div key={nome} className={`flex gap-3 items-start py-2 border-b border-gray-100 ${!vale ? 'opacity-60' : ''}`}>
+              <div key={nome} className={\`flex gap-3 items-start py-2 border-b border-gray-100 \${!vale ? 'opacity-60' : ''}\`}>
                 <span className="text-2xl">{emoji}</span>
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <p className="font-semibold text-gray-800 text-sm">{nome}</p>
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${vale ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-600'}`}>
+                    <span className={\`text-xs px-2 py-0.5 rounded-full font-medium \${vale ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-600'}\`}>
                       {vale ? 'Vale ✅' : 'Evite ❌'}
                     </span>
                   </div>
@@ -109,3 +111,7 @@ export default function OQueComprar() {
     </main>
   )
 }
+`
+
+fs.writeFileSync('app/o-que-comprar-paraguai/page.jsx', content, 'utf8')
+console.log('OK - o-que-comprar-paraguai expandido!')

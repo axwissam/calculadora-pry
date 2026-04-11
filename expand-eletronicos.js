@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs')
+
+const content = `import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
@@ -133,3 +135,7 @@ export default function EletronicosParaguai() {
     </main>
   )
 }
+`
+
+fs.writeFileSync('app/eletronicos-paraguai/page.jsx', content, 'utf8')
+console.log('OK - pagina expandida!')
