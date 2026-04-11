@@ -141,6 +141,24 @@ function ComparativoSection({ valorUSD }) {
 }
 
 function CotacaoBar({ cotacao }) {
+  const minutos = cotacao ? Math.floor((new Date() - new Date(cotacao.created_at)) / 60000) : null
+  const tempoStr = minutos !== null ? (minutos < 60 ? `${minutos}min atrás` : `${Math.floor(minutos / 60)}h atrás`) : ''
+  return (
+    <div className="mt-3 inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 text-sm" style={{ minHeight: 28 }}>
+      {cotacao ? (
+        <>
+          <span className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
+          Dólar: {fmt(cotacao.valor_dolar)} · atualizado {tempoStr}
+        </>
+      ) : (
+        <>
+          <span className="w-2 h-2 bg-yellow-300 rounded-full" />
+          Carregando cotação...
+        </>
+      )}
+    </div>
+  )
+}) {
   if (!cotacao) return (
     <div className="mt-3 inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 text-sm">
       <span className="w-2 h-2 bg-yellow-300 rounded-full" />Carregando cotação...
