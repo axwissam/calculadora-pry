@@ -4,6 +4,6 @@
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://calculadora-pry.vercel.app/sitemap.xml',
+    sitemap: 'https://www.cotaparaguai.com.br/sitemap.xml',
   }
 }
