@@ -119,6 +119,8 @@ export default function ImpostoIphoneParaguai() {
         </Link>
 
       </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vale a pena comprar iPhone no Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Sim, mesmo pagando imposto o preço final costuma ser 20% a 30% mais barato que no Brasil."}},{"@type":"Question","name":"Qual iPhone cabe na cota de US$ 500 do Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Apenas o iPhone SE (US$ 429). Os demais modelos ultrapassam a cota e pagam 50% sobre o excedente."}},{"@type":"Question","name":"Qual modelo de iPhone comprar no Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Prefira o modelo americano (sufixo A), que tem garantia mundial e funciona com todas as operadoras brasileiras."}}]}) }} />
     </main>
   )
 }

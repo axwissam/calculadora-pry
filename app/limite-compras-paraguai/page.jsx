@@ -113,6 +113,8 @@ export default function LimiteComprasParaguai() {
         </Link>
 
       </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual é o limite de compras no Paraguai em 2026?","acceptedAnswer":{"@type":"Answer","text":"US$ 500 por pessoa via terrestre e US$ 1.000 via aérea, sem pagar imposto de importação."}},{"@type":"Question","name":"O que acontece se passar do limite de US$ 500?","acceptedAnswer":{"@type":"Answer","text":"Você paga 50% de imposto sobre o valor excedente. Por exemplo: comprou US$ 700, paga 50% de US$ 200 = US$ 100 de imposto."}},{"@type":"Question","name":"Crianças têm direito à cota de US$ 500?","acceptedAnswer":{"@type":"Answer","text":"Sim! Cada pessoa tem direito à cota, incluindo crianças de qualquer idade."}}]}) }} />
     </main>
   )
 }

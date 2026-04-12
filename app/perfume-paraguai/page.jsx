@@ -102,6 +102,8 @@ export default function PerfumeParaguai() {
         </Link>
 
       </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Vale a pena comprar perfume no Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Sim! Perfumes importados chegam a custar 50% menos do que no Brasil, sendo um dos melhores produtos para comprar."}},{"@type":"Question","name":"Quantos perfumes posso trazer do Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Não há limite de quantidade — o limite é a cota de US$ 500 por pessoa. Com perfumes a US$ 100 cada, dá para trazer 4-5 dentro da cota."}},{"@type":"Question","name":"Quais marcas de perfume comprar no Paraguai?","acceptedAnswer":{"@type":"Answer","text":"Chanel, Dior, Carolina Herrera e YSL têm até 50% de desconto. Perfumes árabes como Lattafa e Armaf são excelentes e muito baratos."}}]}) }} />
     </main>
   )
 }

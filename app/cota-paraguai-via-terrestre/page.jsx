@@ -114,6 +114,8 @@ export default function CotaViaTerrestre() {
         </Link>
 
       </div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qual é a cota de compras no Paraguai via terrestre em 2026?","acceptedAnswer":{"@type":"Answer","text":"US$ 500 por pessoa via terrestre pela Ponte da Amizade ou Pedro Juan Caballero."}},{"@type":"Question","name":"Posso somar a cota com minha família?","acceptedAnswer":{"@type":"Answer","text":"Sim! Cada pessoa tem direito a US$ 500 individuais, incluindo crianças. Uma família de 4 tem US$ 2.000 de cota total."}},{"@type":"Question","name":"O que acontece se passar da cota?","acceptedAnswer":{"@type":"Answer","text":"Você paga 50% de imposto sobre o valor excedente, convertido pela cotação do dólar do dia."}}]}) }} />
     </main>
   )
 }
