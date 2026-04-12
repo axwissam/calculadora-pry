@@ -30,6 +30,7 @@ export default function sitemap() {
     { url: `${base}/quanto-custa-viajar-cidade-del-este`,   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/seguro-viagem-paraguai`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/duty-free-foz-do-iguacu`,               lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/buscar`,                              lastModified: new Date(), changeFrequency: 'daily',   priority: 0.9 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
