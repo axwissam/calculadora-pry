@@ -4,6 +4,7 @@ export const metadata = {
   title: 'Calculadora de Imposto Paraguai 2026 - Calcule sua Cota em Segundos',
   description: 'Calcule quanto vai pagar em reais nas compras do Paraguai. Cota de US$ 500, imposto de 50% sobre excedente, IOF e spread bancario incluidos.',
   keywords: 'calculadora paraguai 2026, cota paraguai, imposto compras paraguai, limite compras paraguai',
+  other: { 'google-adsense-account': 'ca-pub-1540142556511946' },
   verification: {
     google: ['FvyVSV9GmSQ3VcCeGuRSAzhrmRZYQgxVenkPzl24xM0', 'Wc8qhXHXLgmqiw8erVYHdkcmqk3IqmXXMMvEPxN3Z74'],
   },
