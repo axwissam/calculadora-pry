@@ -1,15 +1,15 @@
-Ôªøimport './globals.css'
+import './globals.css'
 
 export const metadata = {
   title: 'Calculadora de Imposto Paraguai 2026 - Calcule sua Cota em Segundos',
-  description: 'Calcule quanto vai pagar em reais nas compras do Paraguai. Cota de US$ 500, imposto de 50% sobre excedente, IOF e spread banc√°rio inclu√≠dos.',
+  description: 'Calcule quanto vai pagar em reais nas compras do Paraguai. Cota de US$ 500, imposto de 50% sobre excedente, IOF e spread banc·rio incluÌdos.',
   keywords: 'calculadora paraguai 2026, cota paraguai, imposto compras paraguai, limite compras paraguai',
   verification: {
     google: 'FvyVSV9GmSQ3VcCeGuRSAzhrmRZYQgxVenkPzl24xM0',
   },
   openGraph: {
     title: 'Calculadora de Compras Paraguai 2026',
-    description: 'Cota de US$ 500, impostos e c√¢mbio em tempo real.',
+    description: 'Cota de US$ 500, impostos e c‚mbio em tempo real.',
     locale: 'pt_BR',
     type: 'website',
     images: [{ url: '/og-image.svg', width: 1200, height: 630 }],
@@ -19,13 +19,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1540142556511946" crossorigin="anonymous"></script>
-      </head>
       <body className="bg-gray-50 antialiased">{children}</body>
     </html>
   )
 }
+
 
 
 
