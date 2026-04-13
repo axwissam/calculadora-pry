@@ -88,6 +88,23 @@ export default function MelhorFormaPagamento() {
 ]
   }) }}
 />
+
+        <div className="bg-white rounded-2xl p-5 shadow-sm">
+          <h2 className="font-bold text-gray-800 mb-3">Leia tambem</h2>
+          <div className="space-y-2">
+            {[
+              { href: '/nomad-paraguai', label: 'Vale a pena usar o Nomad no Paraguai?' },
+              { href: '/limite-compras-paraguai', label: 'Qual o limite de compras no Paraguai?' },
+              { href: '/calculadora-dolar-paraguai', label: 'Calculadora dolar Paraguai 2026' },
+              { href: '/como-declarar-paraguai', label: 'Como declarar compras na Receita Federal' },
+            ].map(({ href, label }) => (
+              <Link key={href} href={href} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 transition-colors">
+                <span>{label}</span><span className="text-gray-400">arrow</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <BannerNomad />
     </main>
   )
 }
