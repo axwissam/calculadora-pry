@@ -116,7 +116,8 @@ function ResultadoCard({ resultado }) {
 function ComparativoSection({ valorUSD, moeda, cotacao }) {
   const [dados, setDados] = useState(null)
   useEffect(() => {
-    const usd = parseFloat(String(valorUSD).replace(',', '.'))
+    const raw = parseFloat(String(valorUSD).replace(',', '.'))
+      const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
     if (!usd || usd <= 0) { setDados(null); return }
     const t = setTimeout(() => {
       fetch('/api/comparar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ valor_usd: usd }) })
