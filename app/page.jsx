@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
@@ -124,7 +124,7 @@ function ComparativoSection({ valorUSD, moeda, cotacao }) {
         .then(r => r.json()).then(setDados).catch(() => { })
     }, 700)
     return () => clearTimeout(t)
-  }, [valorUSD])
+  }, [valorUSD, moeda, cotacao])
   if (!dados) return null
   const sorted = [...dados.comparativo].sort((a, b) => a.total_brl - b.total_brl)
   return (
