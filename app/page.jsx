@@ -113,7 +113,7 @@ function ResultadoCard({ resultado }) {
   )
 }
 
-function ComparativoSection({ valorUSD }) {
+function ComparativoSection({ valorUSD, moeda, cotacao }) {
   const [dados, setDados] = useState(null)
   useEffect(() => {
     const usd = parseFloat(String(valorUSD).replace(',', '.'))
@@ -171,7 +171,7 @@ function ProgressoCota({ resultado, valorUSD, cotacao, moeda }) {
   const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
   const pct = Math.min((usd / 500) * 100, 150)
   const cor = usd <= 500 ? 'bg-green-500' : 'bg-red-500'
-  const label = usd <= 500 ? `US$ ${(500 - usd).toFixed(0)} disponíveis` : `US$ ${(usd - 500).toFixed(0)} acima da cota`
+  const label = usd >= 500 ? (usd === 500 ? 'Na cota exata ✅' : `US$ ${(usd - 500).toFixed(0)} acima da cota`) : `US$ ${(500 - usd).toFixed(0)} disponíveis`
   return (
     <div className="bg-white rounded-2xl p-4 shadow-sm">
       <div className="flex justify-between text-xs text-gray-500 mb-1">
@@ -312,7 +312,7 @@ export default function Home() {
           </div>
 
           <ResultadoCard resultado={resultado} />
-          <ComparativoSection valorUSD={valorUSD} />
+          <ComparativoSection valorUSD={valorUSD} moeda={moeda} cotacao={cotacao} />
 
           <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} moeda={moeda} />
           <ModoFamilia pessoas={pessoas} setPessoas={setPessoas} resultado={resultado} cotacao={cotacao} />
