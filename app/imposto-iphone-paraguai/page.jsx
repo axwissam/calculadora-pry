@@ -109,6 +109,27 @@ export default function ImpostoIphoneParaguai() {
 
         <BannerNomad />
 
+        
+        <div className="bg-gray-50 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Leia também</p>
+          <div className="space-y-2">
+            <Link href="/celular-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">📱</span>
+              <span>Celular no Paraguai</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/quanto-de-imposto-pagar-no-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">💰</span>
+              <span>Quanto de imposto pagar?</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/melhor-forma-pagamento-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">💳</span>
+              <span>Melhor forma de pagamento</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          </div>
+        </div>
         <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
           <span className="text-2xl">🏪</span>
           <div>

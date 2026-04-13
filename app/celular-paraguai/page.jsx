@@ -139,6 +139,27 @@ export default function CelularParaguai() {
 
         <BannerNomad />
 
+        
+        <div className="bg-gray-50 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Leia também</p>
+          <div className="space-y-2">
+            <Link href="/imposto-iphone-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">📱</span>
+              <span>Imposto do iPhone no Paraguai</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/samsung-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">📲</span>
+              <span>Samsung no Paraguai</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/como-calcular-imposto-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">🧮</span>
+              <span>Como calcular o imposto</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          </div>
+        </div>
         <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
           <span className="text-2xl">🏪</span>
           <div>

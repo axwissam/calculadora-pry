@@ -43,6 +43,27 @@ export default function QuantoDeImposto() {
           <p className="font-bold text-green-800 mb-3">Use o simulador de imposto paraguai</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora</Link>
         </div>
+        
+        <div className="bg-gray-50 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Leia também</p>
+          <div className="space-y-2">
+            <Link href="/como-calcular-imposto-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">🧮</span>
+              <span>Como calcular o imposto</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/cota-paraguai-via-terrestre" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">🌉</span>
+              <span>Cota via terrestre 2026</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/melhor-forma-pagamento-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">💳</span>
+              <span>Melhor forma de pagamento</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          </div>
+        </div>
         <BannerNomad />
       </div>
 <script

@@ -120,6 +120,27 @@ export default function AirpodsParaguai() {
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
 
+        
+        <div className="bg-gray-50 rounded-2xl p-4">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Leia também</p>
+          <div className="space-y-2">
+            <Link href="/eletronicos-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">🖥️</span>
+              <span>Eletrônicos no Paraguai</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/imposto-iphone-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">📱</span>
+              <span>Imposto iPhone Paraguai</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+            <Link href="/limite-compras-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+              <span className="text-lg">🛃</span>
+              <span>Limite de compras 2026</span>
+              <span className="ml-auto text-gray-400">→</span>
+            </Link>
+          </div>
+        </div>
         <BannerNomad />
       </div>
     </main>
