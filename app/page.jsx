@@ -11,13 +11,15 @@ const fmtUSD = (v) => new Intl.NumberFormat('pt-BR', { style: 'currency', curren
 
 function useCalculadora() {
   const [moeda, setMoeda] = useState('USD')
-  const [valorUSD, setValorUSD] = useState('')
+  const [valorUSD, setValorUSD] = useState('500')
   const [tipo, setTipo] = useState('dinheiro')
   const [banco, setBanco] = useState('')
   const [resultado, setResultado] = useState(null)
   const [cotacao, setCotacao] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [pessoas, setPessoas] = useState(1)
+  const [historico, setHistorico] = useState(() => { try { return JSON.parse(localStorage.getItem('historico_calc') || '[]') } catch { return [] } })
 
   useEffect(() => {
     fetch('/api/cotacao').then(r => r.json()).then(setCotacao).catch(() => { })
@@ -37,12 +39,14 @@ function useCalculadora() {
       const data = await r.json()
       if (!r.ok) throw new Error(data.error)
       setResultado(data)
+      const novoItem = { valor: usd, tipo, banco, total: data.total_brl, isento: data.isento, data: new Date().toLocaleString('pt-BR') }
+      setHistorico(prev => { const novo = [novoItem, ...prev].slice(0, 5); try { localStorage.setItem('historico_calc', JSON.stringify(novo)) } catch {} return novo })
     } catch (e) { setError(e.message) }
     finally { setLoading(false) }
   }, [valorUSD, tipo, banco])
 
   useEffect(() => { const t = setTimeout(calcular, 400); return () => clearTimeout(t) }, [calcular])
-  return { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error }
+  return { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, pessoas, setPessoas, historico }
 }
 
 const NOMAD_LINK = 'https://nomad.onelink.me/wIQT/Travel?code=1ER33NDKPF%26n=Alex'
@@ -160,8 +164,95 @@ function CotacaoBar({ cotacao }) {
   )
 }
 
+
+function ProgressoCota({ resultado, valorUSD, cotacao }) {
+  if (!resultado || !cotacao) return null
+  const usd = parseFloat(String(valorUSD).replace(',', '.')) || 0
+  const pct = Math.min((usd / 500) * 100, 150)
+  const cor = usd <= 500 ? 'bg-green-500' : 'bg-red-500'
+  const label = usd <= 500 ? `US$ ${(500 - usd).toFixed(0)} disponíveis` : `US$ ${(usd - 500).toFixed(0)} acima da cota`
+  return (
+    <div className="bg-white rounded-2xl p-4 shadow-sm">
+      <div className="flex justify-between text-xs text-gray-500 mb-1">
+        <span>Cota usada</span>
+        <span>{label}</span>
+      </div>
+      <div className="w-full bg-gray-100 rounded-full h-3">
+        <div className={`h-3 rounded-full transition-all ${cor}`} style={{ width: `${Math.min(pct, 100)}%` }} />
+      </div>
+      <div className="flex justify-between text-xs mt-1">
+        <span className="text-gray-400">US$ 0</span>
+        <span className="text-gray-600 font-medium">US$ 500 (cota)</span>
+      </div>
+    </div>
+  )
+}
+
+function CompartilharBtn({ resultado, valorUSD, tipo }) {
+  if (!resultado) return null
+  const texto = `Calculei minhas compras no Paraguai:\n💰 Valor: US$ ${valorUSD}\n💳 Pagamento: ${tipo}\n💵 Total: R$ ${resultado.total_brl.toFixed(2).replace('.', ',')}\n${resultado.isento ? '✅ Dentro da cota — sem imposto!' : '⚠️ Imposto aplicado'}\n\nCalcule o seu em cotaparaguai.com.br`
+  const url = `https://wa.me/?text=${encodeURIComponent(texto)}`
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer"
+      className="flex items-center justify-center gap-2 bg-green-500 text-white rounded-xl py-3 text-sm font-semibold w-full">
+      <span>📤</span> Compartilhar no WhatsApp
+    </a>
+  )
+}
+
+function HistoricoCalcuos({ historico }) {
+  if (!historico || historico.length === 0) return null
+  return (
+    <div className="bg-white rounded-2xl p-5 shadow-sm">
+      <h2 className="font-bold text-gray-800 text-sm mb-3">🕐 Suas últimas consultas</h2>
+      <div className="space-y-2">
+        {historico.map((h, i) => (
+          <div key={i} className="flex justify-between items-center py-2 border-b border-gray-50 text-sm">
+            <div>
+              <span className="font-medium text-gray-700">US$ {h.valor.toFixed(0)}</span>
+              <span className="text-gray-400 text-xs ml-2">{h.tipo} · {h.data}</span>
+            </div>
+            <span className={`font-bold ${h.isento ? 'text-green-600' : 'text-orange-500'}`}>
+              {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(h.total)}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function ModoFamilia({ pessoas, setPessoas, resultado, cotacao }) {
+  if (!resultado || !cotacao) return null
+  return (
+    <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-sm font-medium text-blue-800">👨‍👩‍👧‍👦 Modo família</span>
+        <div className="flex items-center gap-3">
+          <button onClick={() => setPessoas(p => Math.max(1, p - 1))}
+            className="w-8 h-8 rounded-full bg-blue-200 text-blue-800 font-bold text-lg flex items-center justify-center">−</button>
+          <span className="font-bold text-blue-800 w-4 text-center">{pessoas}</span>
+          <button onClick={() => setPessoas(p => Math.min(10, p + 1))}
+            className="w-8 h-8 rounded-full bg-blue-500 text-white font-bold text-lg flex items-center justify-center">+</button>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 text-sm">
+        <div className="bg-white rounded-xl p-3 text-center">
+          <p className="text-gray-500 text-xs">Cota total</p>
+          <p className="font-bold text-blue-700">US$ {(500 * pessoas).toLocaleString()}</p>
+        </div>
+        <div className="bg-white rounded-xl p-3 text-center">
+          <p className="text-gray-500 text-xs">Total a pagar</p>
+          <p className="font-bold text-green-600">
+            {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(resultado.total_brl * pessoas)}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
 export default function Home() {
-  const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error } = useCalculadora()
+  const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, pessoas, setPessoas, historico } = useCalculadora()
   return (
     <>
       <script
@@ -201,7 +292,7 @@ export default function Home() {
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">{moeda === 'USD' ? 'US$' : 'R$'}</span>
               <input type="number" inputMode="decimal" placeholder="0,00" value={valorUSD}
                 onChange={e => setValorUSD(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
+                autoFocus className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
             </div>
             <div className="mt-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
@@ -222,6 +313,10 @@ export default function Home() {
           <ResultadoCard resultado={resultado} />
           <ComparativoSection valorUSD={valorUSD} />
 
+          <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} />
+          <ModoFamilia pessoas={pessoas} setPessoas={setPessoas} resultado={resultado} cotacao={cotacao} />
+          <CompartilharBtn resultado={resultado} valorUSD={valorUSD} tipo={tipo} />
+          <HistoricoCalcuos historico={historico} />
           <BannerNomad />
 
           {/* Bloco de conteúdo SEO — "isca" para AdSense e Google */}
