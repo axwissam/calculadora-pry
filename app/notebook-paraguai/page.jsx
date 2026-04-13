@@ -18,7 +18,41 @@ const modelos = [
 
 export default function NotebookParaguai() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Vale a pena comprar notebook no Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a economia pode chegar a 35%. Um MacBook Air M3 que custa R$ 12.000 no Brasil pode sair por R$ 8.500 a R$ 9.000 no Paraguai com imposto incluído."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O teclado do notebook do Paraguai é em português?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A maioria dos notebooks vendidos no Paraguai tem teclado QWERTY em inglês, sem cedilha e sem acentos nas teclas físicas."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Qual o imposto para trazer notebook do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acima da cota de US$ 500 paga-se 50% sobre o excedente. Um notebook de US$ 999 tem US$ 499 de excedente, gerando US$ 249,50 de imposto."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-gray-700 to-gray-600 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-gray-300 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Notebook no Paraguai em 2026</h1>
@@ -113,5 +147,6 @@ export default function NotebookParaguai() {
 
       </div>
     </main>
+    </>
   )
 }

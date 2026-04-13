@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import BannerNomad from './components/BannerNomad'
 
@@ -253,6 +253,24 @@ function ModoFamilia({ pessoas, setPessoas, resultado, cotacao }) {
     </div>
   )
 }
+
+function BotaoFlutuante({ resultado }) {
+  const [visible, setVisible] = React.useState(false)
+  React.useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  if (!visible) return null
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="fixed bottom-6 right-4 z-50 bg-green-500 text-white rounded-full shadow-lg px-4 py-3 text-sm font-semibold flex items-center gap-2"
+      style={{ boxShadow: '0 4px 20px rgba(34,197,94,0.4)' }}>
+      🧮 Calcular
+    </button>
+  )
+}
 export default function Home() {
   const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, pessoas, setPessoas, historico } = useCalculadora()
   return (
@@ -372,6 +390,7 @@ export default function Home() {
             <Link href="/privacidade" className="text-xs text-gray-400 hover:text-gray-600">Política de Privacidade</Link>
           </div>
         </div>
+            <BotaoFlutuante resultado={resultado} />
       </main>
     </>
   )

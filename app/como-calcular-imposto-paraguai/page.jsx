@@ -9,7 +9,41 @@ export const metadata = {
 
 export default function ComoCalcularImposto() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Como calcular o imposto das compras do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subtraia US$ 500 do valor total. O excedente é multiplicado por 50%. Exemplo: comprou US$ 700, excedente = US$ 200, imposto = US$ 100 convertido pela cotação do dia."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O imposto é sobre o total ou só o excedente?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apenas sobre o excedente acima dos US$ 500 de cota. Se comprou US$ 600, paga 50% sobre US$ 100, não sobre os US$ 600 totais."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Como calcular o IOF nas compras do Paraguai com cartão?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O IOF é de 3,5% sobre o valor total em dólares. Cartões como Nomad e Wise não cobram IOF adicional pois o imposto já foi pago na conversão."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-green-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Como Calcular Imposto Paraguai 2026</h1>
@@ -118,5 +152,6 @@ export default function ComoCalcularImposto() {
 
       </div>
     </main>
+    </>
   )
 }

@@ -18,7 +18,41 @@ const modelos = [
 
 export default function CelularParaguai() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Vale a pena comprar celular no Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a economia pode chegar a 40% mesmo após pagar o imposto de importação. Um iPhone que custa R$ 8.000 no Brasil pode sair por R$ 5.500 a R$ 6.000 no Paraguai com imposto incluído."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Qual o imposto para trazer celular do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A cota de isenção é de US$ 500. Acima disso, paga-se 50% sobre o valor excedente. Um celular de US$ 800 tem US$ 300 de excedente, gerando US$ 150 de imposto."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O celular do Paraguai funciona no Brasil?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, a versão americana (LL/A) dos iPhones funciona normalmente no Brasil. Para Samsung e outras marcas, verifique as bandas 4G e 5G compatíveis com operadoras brasileiras."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-green-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Celular no Paraguai em 2026</h1>
@@ -116,5 +150,6 @@ export default function CelularParaguai() {
 
       </div>
     </main>
+    </>
   )
 }

@@ -18,7 +18,41 @@ const itens = [
 
 export default function EletronicosParaguai() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Quais eletrônicos valem mais a pena comprar no Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fones de ouvido (até 45% mais barato), smartphones (até 40%), smartwatches (até 38%) e notebooks (até 35%) são os produtos com melhor custo-benefício."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Eletrônico do Paraguai tem garantia no Brasil?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na maioria dos casos não. A garantia do fabricante geralmente não cobre produtos comprados fora do Brasil. Considere contratar seguro para o aparelho."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Posso trazer eletrônico acima de US$ 500 do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, mas paga 50% de imposto sobre o valor excedente. Mesmo assim costuma valer a pena — use a calculadora para simular o valor exato com a cotação do dia."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-green-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Eletronicos no Paraguai em 2026</h1>
@@ -131,5 +165,6 @@ export default function EletronicosParaguai() {
 
       </div>
     </main>
+    </>
   )
 }

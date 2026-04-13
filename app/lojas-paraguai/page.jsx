@@ -89,7 +89,7 @@ export default function LojasParaguai() {
                 alt={`Fachada da loja ${loja.nome} em Ciudad del Este, Paraguai`}
                 fill
                 className="object-cover"
-              />
+               loading="lazy"/>
               <div className="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
                 {loja.destaque}
               </div>

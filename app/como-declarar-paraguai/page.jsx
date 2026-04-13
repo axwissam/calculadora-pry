@@ -9,7 +9,41 @@ export const metadata = {
 
 export default function ComoDeclarar() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Como declarar compras do Paraguai na Receita Federal?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use o app Viajantes da Receita Federal antes de cruzar a fronteira, declare os produtos e pague o DARF gerado. Ou declare diretamente no posto da Receita na fronteira."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O que é o e-DBV?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "É a Declaração de Bens de Viajante da Receita Federal. Pelo app Viajantes você informa os produtos comprados, o sistema calcula o imposto e gera um DARF para pagamento."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O que acontece se não declarar compras do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não declarar produtos acima da cota é descaminho — crime previsto no Código Penal. A multa pode chegar a 50% do valor dos bens retidos."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-blue-600 to-blue-500 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-blue-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Como Declarar Compras do Paraguai</h1>
@@ -105,5 +139,6 @@ export default function ComoDeclarar() {
 
       </div>
     </main>
+    </>
   )
 }

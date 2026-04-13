@@ -18,7 +18,41 @@ const marcas = [
 
 export default function WhiskyParaguai() {
   return (
-    <main className="min-h-screen bg-gray-50 pb-16">
+    <>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+        "@type": "Question",
+        "name": "Qual o limite de whisky que posso trazer do Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada pessoa pode trazer até 12 litros de bebidas alcoólicas. Esse limite é independente da cota geral de US$ 500, mas o valor das bebidas conta dentro da cota."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "Vale a pena comprar whisky no Paraguai?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, é um dos produtos com maior economia. Um Johnnie Walker Black Label custa US$ 28 no Paraguai contra R$ 180 no Brasil — economia de até 55%."
+        }
+    },
+    {
+        "@type": "Question",
+        "name": "O whisky do Paraguai é original?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em lojas estabelecidas como Shopping China sim. Evite comprar de ambulantes com preços muito abaixo do normal, pois podem ser produtos adulterados."
+        }
+    }
+]
+  }) }}
+/>
+      <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-amber-700 to-amber-600 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-amber-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">Whisky no Paraguai em 2026</h1>
@@ -121,5 +155,6 @@ export default function WhiskyParaguai() {
 
       </div>
     </main>
+    </>
   )
 }
