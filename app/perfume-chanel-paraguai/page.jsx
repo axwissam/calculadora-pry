@@ -14,7 +14,7 @@ const perfumes = [
   { nome: 'Bleu de Chanel EDP 100ml', usd: 148, brasil: 1380, genero: 'Masculino' },
   { nome: 'Allure Homme Sport EDT 100ml', usd: 125, brasil: 1150, genero: 'Masculino' },
   { nome: 'Gabrielle Chanel EDP 100ml', usd: 142, brasil: 1320, genero: 'Feminino' },
-  { nome: 'N°5 L'Eau EDT 100ml', usd: 132, brasil: 1220, genero: 'Feminino' },
+  { nome: 'N°5 LEau EDT 100ml', usd: 132, brasil: 1220, genero: 'Feminino' },
   { nome: 'Chance Eau Fraiche EDT 100ml', usd: 128, brasil: 1180, genero: 'Feminino' },
 ]
 
