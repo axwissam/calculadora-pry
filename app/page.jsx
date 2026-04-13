@@ -165,9 +165,10 @@ function CotacaoBar({ cotacao }) {
 }
 
 
-function ProgressoCota({ resultado, valorUSD, cotacao }) {
+function ProgressoCota({ resultado, valorUSD, cotacao, moeda }) {
   if (!resultado || !cotacao) return null
-  const usd = parseFloat(String(valorUSD).replace(',', '.')) || 0
+  const raw = parseFloat(String(valorUSD).replace(',', '.')) || 0
+  const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
   const pct = Math.min((usd / 500) * 100, 150)
   const cor = usd <= 500 ? 'bg-green-500' : 'bg-red-500'
   const label = usd <= 500 ? `US$ ${(500 - usd).toFixed(0)} disponíveis` : `US$ ${(usd - 500).toFixed(0)} acima da cota`
@@ -313,7 +314,7 @@ export default function Home() {
           <ResultadoCard resultado={resultado} />
           <ComparativoSection valorUSD={valorUSD} />
 
-          <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} />
+          <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} moeda={moeda} />
           <ModoFamilia pessoas={pessoas} setPessoas={setPessoas} resultado={resultado} cotacao={cotacao} />
           <CompartilharBtn resultado={resultado} valorUSD={valorUSD} tipo={tipo} />
           <HistoricoCalcuos historico={historico} />
