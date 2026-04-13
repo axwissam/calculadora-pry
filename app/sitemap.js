@@ -31,6 +31,9 @@ export default function sitemap() {
     { url: `${base}/seguro-viagem-paraguai`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/duty-free-foz-do-iguacu`,               lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/buscar`,                              lastModified: new Date(), changeFrequency: 'daily',   priority: 0.9 },
+    { url: `${base}/quanto-custa-iphone-paraguai`,         lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/ps5-paraguai`,                        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/perfume-chanel-paraguai`,             lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
