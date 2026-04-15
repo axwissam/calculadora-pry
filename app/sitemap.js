@@ -38,6 +38,9 @@ export default function sitemap() {
     { url: `${base}/lojas-ciudad-del-este`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/brasil-vs-paraguai`,                 lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/sobre`,                              lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.6 },
+    { url: `${base}/como-chegar-ciudad-del-este`,          lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/como-nao-cair-em-golpes-paraguai`,    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/guia-compras-paraguai`,               lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
