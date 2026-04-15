@@ -317,71 +317,35 @@ export default function Home() {
             <div className="mt-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
               <div className="grid grid-cols-3 gap-2">
-                {[{ key: 'dinheiro', icon: '💵', label: 'Dinheiro' }, { key: 'pix', icon: '📱', label: 'Pix' }, { key: 'credito', icon: '💳', label: 'Cartão' }].map(({ key, icon, label }) => (
-                  <button key={key} onClick={() => { setTipo(key); setBanco('') }}
-                    className={`py-3 rounded-xl text-sm font-medium transition-all ${tipo === key ? 'bg-green-500 text-white shadow-sm' : 'bg-gray-100 text-gray-600'}`}>
-                    {icon} {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <BancoSelector tipo={tipo} banco={banco} setBanco={setBanco} />
-            {loading && <div className="mt-3 text-center text-sm text-gray-400 animate-pulse">Calculando...</div>}
-            {error && <div className="mt-3 bg-red-50 border border-red-200 rounded-xl px-4 py-2 text-sm text-red-600">⚠️ {error}</div>}
-          </div>
-
-          <ResultadoCard resultado={resultado} />
-          <ComparativoSection valorUSD={valorUSD} moeda={moeda} cotacao={cotacao} />
-
-          <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} moeda={moeda} />
-          <ModoFamilia pessoas={pessoas} setPessoas={setPessoas} resultado={resultado} cotacao={cotacao} />
-          <CompartilharBtn resultado={resultado} valorUSD={valorUSD} tipo={tipo} />
-          <HistoricoCalcuos historico={historico} />
-          <BannerNomad />
-
-          {/* Bloco de conteúdo SEO — "isca" para AdSense e Google */}
-          <div className="bg-white rounded-2xl p-5 shadow-sm text-sm text-gray-600 space-y-3">
-            <h2 className="font-bold text-gray-800 text-base">📋 Cota de compras no Paraguai em 2026</h2>
-            <p>A cota de isenção para compras no Paraguai em 2026 é de <strong>US$ 500 por pessoa via terrestre</strong> (Ponte da Amizade / Pedro Juan Caballero). Para viagens aéreas, o limite sobe para <strong>US$ 1.000 por pessoa</strong>.</p>
-            <p>Valores acima da cota são tributados em <strong>50% de imposto de importação</strong> sobre o excedente. Por exemplo: se você comprou US$ 800, paga 50% sobre os US$ 300 excedentes — ou seja, US$ 150 de imposto convertidos pela cotação do dia.</p>
-            <h2 className="font-bold text-gray-800 text-base mt-2">💳 IOF e spread: os custos escondidos</h2>
-            <p>Além do imposto de importação, pagamentos com cartão têm <strong>IOF de 3,5%</strong> e spread bancário de até 7%. Bancos como Nomad e Wise não cobram IOF na compra — o imposto já foi pago na conversão de reais para dólar.</p>
-            <p><strong>Dica:</strong> Para economizar ao máximo, prefira pagar em dinheiro ou Pix — sem IOF e sem spread bancário. Nossa calculadora de imposto Paraguai compara todas as formas de pagamento automaticamente.</p>
-            <h2 className="font-bold text-gray-800 text-base mt-2">🧮 Como usar o simulador de imposto Paraguai</h2>
-            <p>Digite o valor em dólar da sua compra, escolha a forma de pagamento e selecione seu banco. O resultado aparece em segundos com cotação do Banco Central atualizada a cada 30 minutos.</p>
-          </div>
-
-          <Link href="/lojas-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
-            <span className="text-3xl">🏪</span>
-            <div>
-              <p className="font-bold text-gray-800 text-sm">Melhores lojas do Paraguai</p>
-              <p className="text-xs text-gray-500">Shopping China, Flytec, Mobile Zone e mais</p>
-            </div>
-            <span className="ml-auto text-green-500 font-bold">→</span>
-          </Link>
-          <div className="grid grid-cols-1 gap-2">
-            {[
+                            {[
+              // 🛍️ Produtos
               { href: '/celular-paraguai', icon: '📱', label: 'Celular no Paraguai 2026' },
-            { href: '/notebook-paraguai', icon: '💻', label: 'Notebook no Paraguai 2026' },
-            { href: '/whisky-paraguai', icon: '🥃', label: 'Whisky no Paraguai 2026' },
-            { href: '/samsung-paraguai', icon: '📲', label: 'Samsung no Paraguai 2026' },
+              { href: '/notebook-paraguai', icon: '💻', label: 'Notebook no Paraguai 2026' },
+              { href: '/samsung-paraguai', icon: '📲', label: 'Samsung no Paraguai 2026' },
               { href: '/airpods-paraguai', icon: '🎧', label: 'AirPods no Paraguai 2026' },
               { href: '/macbook-paraguai', icon: '💻', label: 'MacBook no Paraguai 2026' },
               { href: '/quanto-custa-iphone-paraguai', icon: '📱', label: 'Quanto custa iPhone no Paraguai?' },
               { href: '/ps5-paraguai', icon: '🎮', label: 'PS5 no Paraguai 2026' },
+              { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
               { href: '/perfume-chanel-paraguai', icon: '🌸', label: 'Perfume Chanel no Paraguai' },
-              { href: '/quanto-custa-iphone-paraguai', icon: '📱', label: 'Quanto custa iPhone no Paraguai?' },
-              { href: '/ps5-paraguai', icon: '🎮', label: 'PS5 no Paraguai 2026' },
-              { href: '/perfume-chanel-paraguai', icon: '🌸', label: 'Perfume Chanel no Paraguai' },
+              { href: '/whisky-paraguai', icon: '🥃', label: 'Whisky no Paraguai 2026' },
+              { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletrônicos no Paraguai' },
+              // 🧮 Imposto e cota
               { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
               { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
               { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
               { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
-              { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
-              { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletronicos no Paraguai' },
-              { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
               { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
               { href: '/como-declarar-paraguai', icon: '📋', label: 'Como declarar na Receita?' },
+              // 🗺️ Guias de viagem
+              { href: '/guia-compras-paraguai', icon: '🗺️', label: 'Guia completo de compras no Paraguai' },
+              { href: '/como-chegar-ciudad-del-este', icon: '🚗', label: 'Como chegar em Ciudad del Este' },
+              { href: '/como-nao-cair-em-golpes-paraguai', icon: '🚨', label: 'Como não cair em golpes no Paraguai' },
+              { href: '/alfandega-paraguai', icon: '🛃', label: 'Alfândega do Paraguai 2026' },
+              { href: '/lojas-ciudad-del-este', icon: '🏬', label: 'Melhores lojas de Ciudad del Este' },
+              { href: '/brasil-vs-paraguai', icon: '🆚', label: 'Brasil vs Paraguai — o que compensa?' },
+              // 💳 Pagamento e dicas
+              { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
               { href: '/o-que-comprar-paraguai', icon: '🛍️', label: 'O que vale a pena comprar?' },
             ].map(({ href, icon, label }) => (
               <Link key={href} href={href}
