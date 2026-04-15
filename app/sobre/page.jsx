@@ -33,8 +33,7 @@ export default function Sobre() {
           <div className="space-y-3">
             {[
               { icon: '🧮', titulo: 'Calculadora de Imposto', desc: 'Calcule o imposto de importação de qualquer produto com câmbio real do Banco Central.' },
-              { icon: '📱', titulo: 'Preços de Produtos', desc: 'Tabelas com preços reais de iPhone, Samsung, MacBook, PS5, perfumes e mais.' },
-              { icon: '📋', titulo: 'Guias Completos', desc: 'Tudo sobre a alfândega, cota de US$ 500, como declarar e o que pode trazer.' },
+  { icon: '📋', titulo: 'Guias Completos', desc: 'Tudo sobre a alfândega, cota de US$ 500, como declarar e o que pode trazer.' },
               { icon: '🏪', titulo: 'Guia de Lojas', desc: 'As melhores lojas de Ciudad del Este com dicas de onde comprar com segurança.' },
               { icon: '💳', titulo: 'Dicas de Pagamento', desc: 'Como pagar no Paraguai sem perder dinheiro com IOF e spread cambial.' },
             ].map(({ icon, titulo, desc }) => (
