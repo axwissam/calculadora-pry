@@ -34,6 +34,9 @@ export default function sitemap() {
     { url: `${base}/quanto-custa-iphone-paraguai`,         lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/ps5-paraguai`,                        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/perfume-chanel-paraguai`,             lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/alfandega-paraguai`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/lojas-ciudad-del-este`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/brasil-vs-paraguai`,                 lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
