@@ -37,6 +37,7 @@ export default function sitemap() {
     { url: `${base}/alfandega-paraguai`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/lojas-ciudad-del-este`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/brasil-vs-paraguai`,                 lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/sobre`,                              lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.6 },
     { url: `${base}/privacidade`,                           lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ]
 }
