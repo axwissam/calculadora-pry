@@ -360,6 +360,9 @@ export default function Home() {
             <Link href="/privacidade" className="text-xs text-gray-400 hover:text-gray-600">Política de Privacidade</Link>
           </div>
         </div>
+        </div>
+        </div>
+        </div>
             <BotaoFlutuante resultado={resultado} />
       </main>
     </>
