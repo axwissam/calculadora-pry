@@ -1,144 +1,71 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
-
 export const metadata = {
-  title: 'AirPods no Paraguai 2026 - Preços e Vale a Pena? | Calculadora Paraguai',
-  description: 'Comprar AirPods no Paraguai em 2026 vale a pena? Veja preços do AirPods 4, Pro 2, Max com imposto calculado. Economia de até 40% vs Brasil.',
-  keywords: 'airpods paraguai 2026, airpods pro paraguai, airpods max paraguai, preco airpods paraguai, apple paraguai',
+  title: 'AirPods no Paraguai 2026 - Preco e Vale a Pena? | CotaParaguai',
+  description: 'Quanto custam AirPods no Paraguai em 2026? AirPods 2, 3, Pro e Max. Veja precos em dolares e calcule o valor final em reais.',
+  keywords: 'airpods paraguai, airpods pro paraguai, preco airpods cidade del este, fone apple paraguai 2026',
 }
-
-const modelos = [
-  { modelo: 'AirPods 4', preco: 'US$ 129', cota: true, imposto: 'R$ 0', economia: '~35%' },
-  { modelo: 'AirPods 4 ANC', preco: 'US$ 179', cota: true, imposto: 'R$ 0', economia: '~35%' },
-  { modelo: 'AirPods Pro 2', preco: 'US$ 249', cota: true, imposto: 'R$ 0', economia: '~38%' },
-  { modelo: 'AirPods Max (USB-C)', preco: 'US$ 549', cota: false, imposto: '~US$ 25', economia: '~30%' },
-]
-
 export default function AirpodsParaguai() {
   return (
     <main className="min-h-screen bg-gray-50 pb-16">
       <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-12 pb-8 text-white">
         <Link href="/" className="text-green-100 text-sm mb-4 block">← Calculadora</Link>
         <h1 className="text-2xl font-bold">AirPods no Paraguai em 2026</h1>
-        <p className="text-green-100 mt-2 text-sm">Preços, impostos e qual modelo comprar.</p>
+        <p className="text-green-100 mt-2 text-sm">Precos reais de todos os modelos e se vale a pena comprar.</p>
       </div>
-
-      <div className="px-4 py-6 max-w-2xl mx-auto space-y-5">
-
+      <div className="px-4 py-6 max-w-2xl mx-auto space-y-6">
         <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
-          <p className="font-bold text-green-800">✅ AirPods é um dos melhores produtos para comprar no Paraguai</p>
-          <p className="text-green-700 text-sm mt-2">Os AirPods custam até <strong>40% menos</strong> que no Brasil e todos os modelos (exceto o Max) cabem dentro da cota de US$ 500 — sem pagar nenhum imposto de importação.</p>
+          <p className="font-bold text-green-800 text-base">AirPods sao um dos melhores produtos para comprar no Paraguai</p>
+          <p className="text-green-700 text-sm mt-2">Leves, pequenos e com preco ate <strong>40% menor</strong> que no Brasil. Todos os modelos cabem facilmente dentro da cota de US$ 500.</p>
         </div>
-
         <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">🎧 Preços AirPods no Paraguai 2026</h2>
+          <h2 className="text-lg font-bold text-gray-800 mb-3">Precos dos AirPods em 2026</h2>
           <div className="space-y-2">
-            {modelos.map(({ modelo, preco, cota, imposto, economia }) => (
+            {[
+              { modelo: 'AirPods 2a geracao', preco: 'US$ 80 a 100', cota: true },
+              { modelo: 'AirPods 3a geracao', preco: 'US$ 130 a 160', cota: true },
+              { modelo: 'AirPods Pro 2a geracao', preco: 'US$ 180 a 220', cota: true },
+              { modelo: 'AirPods Max', preco: 'US$ 420 a 480', cota: true },
+            ].map(({ modelo, preco, cota }) => (
               <div key={modelo} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
                 <div>
-                  <p className="font-medium text-gray-800 text-sm">{modelo}</p>
-                  <p className="text-gray-400 text-xs">{preco} · Imposto: {imposto}</p>
+                  <p className="text-sm font-medium text-gray-800">{modelo}</p>
+                  <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-green-100 text-green-700">Dentro da cota ✅</span>
                 </div>
-                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${cota ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
-                  {cota ? `✅ Sem imposto · ${economia}` : `Economia: ${economia}`}
-                </span>
+                <span className="text-sm font-bold text-green-600">{preco}</span>
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 mt-3">* Preços aproximados. Use a calculadora para o valor exato com câmbio do dia.</p>
+          <p className="text-gray-400 text-xs mt-3">* Precos estimados. Verifique com cambio do dia na calculadora.</p>
         </div>
-
         <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">🥇 Qual AirPods comprar no Paraguai?</h2>
-          <div className="space-y-3">
-            <div className="bg-green-50 rounded-xl p-4">
-              <p className="font-bold text-green-800">Melhor escolha: AirPods Pro 2</p>
-              <p className="text-green-700 text-sm mt-1">US$ 249 — cancelamento de ruído ativo, áudio espacial, chip H2. Entra dentro da cota sem pagar imposto. No Brasil custa R$ 2.199 — no Paraguai sai ~R$ 1.310. <strong>Economia de ~R$ 890!</strong></p>
-            </div>
-            <div className="bg-blue-50 rounded-xl p-4">
-              <p className="font-bold text-blue-800">Melhor custo-benefício: AirPods 4</p>
-              <p className="text-blue-700 text-sm mt-1">US$ 129 — modelo básico com ótima qualidade de som. No Brasil custa R$ 1.199 — no Paraguai sai ~R$ 680. <strong>Economia de ~R$ 519!</strong></p>
-            </div>
-            <div className="bg-purple-50 rounded-xl p-4">
-              <p className="font-bold text-purple-800">Premium: AirPods Max</p>
-              <p className="text-purple-700 text-sm mt-1">US$ 549 — ultrapassa a cota em US$ 49, pagando ~US$ 25 de imposto. Mesmo assim sai bem mais barato que no Brasil (R$ 5.499).</p>
-            </div>
-          </div>
+          <h2 className="text-lg font-bold text-gray-800 mb-3">Dicas para comprar AirPods no Paraguai</h2>
+          <ul className="space-y-2 text-sm text-gray-600">
+            <li className="flex gap-2"><span className="text-green-500 font-bold">✓</span> Compre em lojas oficiais Apple ou revendedores autorizados</li>
+            <li className="flex gap-2"><span className="text-green-500 font-bold">✓</span> Verifique se a caixa esta lacrada</li>
+            <li className="flex gap-2"><span className="text-green-500 font-bold">✓</span> Teste antes de pagar — conecte ao celular</li>
+            <li className="flex gap-2"><span className="text-green-500 font-bold">✓</span> Exija nota fiscal</li>
+            <li className="flex gap-2"><span className="text-red-400 font-bold">✗</span> Evite AirPods muito baratos — provavelmente falsificados</li>
+          </ul>
         </div>
-
-        <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">📦 Posso trazer mais de um AirPods?</h2>
-          <p className="text-gray-600 text-sm mb-3">Sim, desde que fique dentro da cota de US$ 500 por pessoa. Exemplos:</p>
-          <div className="space-y-2 text-sm">
-            <div className="bg-green-50 rounded-xl p-3">
-              <p className="text-green-700">2x AirPods 4 (US$ 129 cada) = <strong>US$ 258</strong> — dentro da cota ✅</p>
-            </div>
-            <div className="bg-green-50 rounded-xl p-3">
-              <p className="text-green-700">AirPods Pro 2 (US$ 249) + AirPods 4 (US$ 129) = <strong>US$ 378</strong> — dentro da cota ✅</p>
-            </div>
-            <div className="bg-yellow-50 rounded-xl p-3">
-              <p className="text-yellow-700">AirPods Pro 2 (US$ 249) + AirPods Max (US$ 549) = <strong>US$ 798</strong> — paga imposto sobre US$ 298 ⚠️</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">✅ Dicas para comprar AirPods no Paraguai</h2>
-          <div className="space-y-2 text-sm text-gray-600">
-            <div className="flex gap-2"><span>1️⃣</span><p><strong>Verifique o número de série</strong> em checkcoverage.apple.com — confirma autenticidade e garantia.</p></div>
-            <div className="flex gap-2"><span>2️⃣</span><p><strong>Compre em lojas Apple reseller</strong> — Shopping China e Mobile Zone têm produtos originais.</p></div>
-            <div className="flex gap-2"><span>3️⃣</span><p><strong>Verifique se a caixa está lacrada</strong> — AirPods originais sempre vêm com lacre intacto.</p></div>
-            <div className="flex gap-2"><span>4️⃣</span><p><strong>Exija nota fiscal</strong> — necessária para declarar na Receita Federal.</p></div>
-            <div className="flex gap-2"><span>5️⃣</span><p><strong>Combine com outros produtos</strong> — se comprar iPhone + AirPods, distribua pela família para não estourar a cota.</p></div>
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-800 mb-3">💰 Comparação de preços Brasil vs Paraguai</h2>
-          <div className="space-y-2 text-sm">
-            {[
-              { modelo: 'AirPods 4', brasil: 'R$ 1.199', paraguai: '~R$ 680', economia: '~R$ 519' },
-              { modelo: 'AirPods Pro 2', brasil: 'R$ 2.199', paraguai: '~R$ 1.310', economia: '~R$ 889' },
-              { modelo: 'AirPods Max', brasil: 'R$ 5.499', paraguai: '~R$ 3.100', economia: '~R$ 2.400' },
-            ].map(({ modelo, brasil, paraguai, economia }) => (
-              <div key={modelo} className="bg-gray-50 rounded-xl p-3">
-                <p className="font-bold text-gray-800 text-sm">{modelo}</p>
-                <div className="flex justify-between text-xs mt-1">
-                  <span className="text-gray-500">Brasil: <strong>{brasil}</strong></span>
-                  <span className="text-gray-500">Paraguai: <strong>{paraguai}</strong></span>
-                  <span className="text-green-700 font-bold">{economia}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-gray-400 text-xs mt-2">* Valores aproximados com câmbio de R$ 5,25.</p>
-        </div>
-
-        <div className="bg-green-50 border border-green-100 rounded-2xl p-5">
-          <p className="font-bold text-green-800 mb-1">🧮 Calcule o preço exato dos seus AirPods</p>
-          <p className="text-green-700 text-sm mb-3">Com câmbio real do Banco Central e todos os impostos.</p>
+        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5">
+          <p className="font-bold text-blue-800 mb-2">Calcule o preco final dos seus AirPods</p>
+          <p className="text-blue-600 text-sm mb-4">Com cambio em tempo real e imposto incluido.</p>
           <Link href="/" className="block bg-green-500 text-white text-center py-3 rounded-xl font-semibold">Abrir Calculadora →</Link>
         </div>
-
-        
-        <div className="bg-gray-50 rounded-2xl p-4">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">Leia também</p>
+        <div className="bg-white rounded-2xl p-5 shadow-sm">
+          <h2 className="font-bold text-gray-800 mb-3">Leia tambem</h2>
           <div className="space-y-2">
-            <Link href="/eletronicos-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
-              <span className="text-lg">🖥️</span>
-              <span>Eletrônicos no Paraguai</span>
-              <span className="ml-auto text-gray-400">→</span>
-            </Link>
-            <Link href="/imposto-iphone-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
-              <span className="text-lg">📱</span>
-              <span>Imposto iPhone Paraguai</span>
-              <span className="ml-auto text-gray-400">→</span>
-            </Link>
-            <Link href="/limite-compras-paraguai" className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
-              <span className="text-lg">🛃</span>
-              <span>Limite de compras 2026</span>
-              <span className="ml-auto text-gray-400">→</span>
-            </Link>
+            {[
+              { href: '/eletronicos-paraguai', label: 'Eletronicos no Paraguai' },
+              { href: '/imposto-iphone-paraguai', label: 'Imposto iPhone Paraguai' },
+              { href: '/cota-paraguai-via-terrestre', label: 'Cota via terrestre 2026' },
+              { href: '/melhor-forma-pagamento-paraguai', label: 'Melhor forma de pagamento' },
+            ].map(({ href, label }) => (
+              <Link key={href} href={href} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100">
+                <span>{label}</span><span className="text-gray-400">→</span>
+              </Link>
+            ))}
           </div>
         </div>
         <BannerNomad />
