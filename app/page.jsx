@@ -19,10 +19,12 @@ function useCalculadora() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [pessoas, setPessoas] = useState(1)
-  const [historico, setHistorico] = useState(() => { try { return JSON.parse(localStorage.getItem('historico_calc') || '[]') } catch { return [] } })
+  const [historico, setHistorico] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('historico_calc') || '[]') } catch { return [] }
+  })
 
   useEffect(() => {
-    fetch('/api/cotacao').then(r => r.json()).then(setCotacao).catch(() => { })
+    fetch('/api/cotacao').then(r => r.json()).then(setCotacao).catch(() => {})
   }, [])
 
   const calcular = useCallback(async () => {
@@ -40,7 +42,11 @@ function useCalculadora() {
       if (!r.ok) throw new Error(data.error)
       setResultado(data)
       const novoItem = { valor: usd, tipo, banco, total: data.total_brl, isento: data.isento, data: new Date().toLocaleString('pt-BR') }
-      setHistorico(prev => { const novo = [novoItem, ...prev].slice(0, 5); try { localStorage.setItem('historico_calc', JSON.stringify(novo)) } catch {} return novo })
+      setHistorico(prev => {
+        const novo = [novoItem, ...prev].slice(0, 5)
+        try { localStorage.setItem('historico_calc', JSON.stringify(novo)) } catch {}
+        return novo
+      })
     } catch (e) { setError(e.message) }
     finally { setLoading(false) }
   }, [valorUSD, tipo, banco])
@@ -57,8 +63,6 @@ function BancoSelector({ tipo, banco, setBanco }) {
   return (
     <div className="mt-3 space-y-2">
       <label className="block text-sm font-medium text-gray-600">Banco / Cartão</label>
-
-      {/* Nomad em destaque */}
       {tipo === 'credito' && (
         <a href={NOMAD_LINK} target="_blank" rel="noopener noreferrer"
           onClick={() => setBanco('Nubank')}
@@ -68,10 +72,9 @@ function BancoSelector({ tipo, banco, setBanco }) {
             <span style={{ fontSize: 12, fontWeight: 700, color: '#1a1a1a' }}>Menor taxa de câmbio</span>
             <span style={{ display: 'block', fontSize: 10, color: '#555' }}>Código 1ER33NDKPF · taxa zero na 1ª conversão</span>
           </div>
-          <span style={{ fontSize: 10, background: '#1a1a1a', color: '#F5C800', borderRadius: 6, padding: '2px 7px', fontWeight: 700 }}>Indicado ⭐</span>
+          <span style={{ fontSize: 10, background: '#1a1a1a', color: '#F5C800', borderRadius: 6, padding: '2px 7px', fontWeight: 700 }}>Indicado ★</span>
         </a>
       )}
-
       <select value={banco} onChange={e => setBanco(e.target.value)}
         className="w-full border border-gray-300 rounded-xl px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-green-500 bg-white">
         <option value="">Selecione seu banco</option>
@@ -117,11 +120,11 @@ function ComparativoSection({ valorUSD, moeda, cotacao }) {
   const [dados, setDados] = useState(null)
   useEffect(() => {
     const raw = parseFloat(String(valorUSD).replace(',', '.'))
-      const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
+    const usd = moeda === 'BRL' && cotacao?.valor_dolar ? raw / cotacao.valor_dolar : raw
     if (!usd || usd <= 0) { setDados(null); return }
     const t = setTimeout(() => {
       fetch('/api/comparar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ valor_usd: usd }) })
-        .then(r => r.json()).then(setDados).catch(() => { })
+        .then(r => r.json()).then(setDados).catch(() => {})
     }, 700)
     return () => clearTimeout(t)
   }, [valorUSD, moeda, cotacao])
@@ -165,7 +168,6 @@ function CotacaoBar({ cotacao }) {
   )
 }
 
-
 function ProgressoCota({ resultado, valorUSD, cotacao, moeda }) {
   if (!resultado || !cotacao) return null
   const raw = parseFloat(String(valorUSD).replace(',', '.')) || 0
@@ -202,7 +204,7 @@ function CompartilharBtn({ resultado, valorUSD, tipo }) {
   )
 }
 
-function HistoricoCalcuos({ historico }) {
+function HistoricoCalculos({ historico }) {
   if (!historico || historico.length === 0) return null
   return (
     <div className="bg-white rounded-2xl p-5 shadow-sm">
@@ -271,6 +273,40 @@ function BotaoFlutuante({ resultado }) {
     </button>
   )
 }
+
+const SEO_LINKS = [
+  // 🛍️ Produtos
+  { href: '/celular-paraguai', icon: '📱', label: 'Celular no Paraguai 2026' },
+  { href: '/notebook-paraguai', icon: '💻', label: 'Notebook no Paraguai 2026' },
+  { href: '/samsung-paraguai', icon: '📲', label: 'Samsung no Paraguai 2026' },
+  { href: '/airpods-paraguai', icon: '🎧', label: 'AirPods no Paraguai 2026' },
+  { href: '/macbook-paraguai', icon: '💻', label: 'MacBook no Paraguai 2026' },
+  { href: '/quanto-custa-iphone-paraguai', icon: '📱', label: 'Quanto custa iPhone no Paraguai?' },
+  { href: '/ps5-paraguai', icon: '🎮', label: 'PS5 no Paraguai 2026' },
+  { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
+  { href: '/perfume-chanel-paraguai', icon: '🌸', label: 'Perfume Chanel no Paraguai' },
+  { href: '/whisky-paraguai', icon: '🥃', label: 'Whisky no Paraguai 2026' },
+  { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletrônicos no Paraguai' },
+  // 🧮 Imposto e cota
+  { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
+  { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
+  { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
+  { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
+  { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
+  { href: '/como-declarar-paraguai', icon: '📋', label: 'Como declarar na Receita?' },
+  // 🗺️ Guias de viagem
+  { href: '/guia-compras-paraguai', icon: '🗺️', label: 'Guia completo de compras no Paraguai' },
+  { href: '/como-chegar-ciudad-del-este', icon: '🚗', label: 'Como chegar em Ciudad del Este' },
+  { href: '/como-nao-cair-em-golpes-paraguai', icon: '🚨', label: 'Como não cair em golpes no Paraguai' },
+  { href: '/alfandega-paraguai', icon: '🛃', label: 'Alfândega do Paraguai 2026' },
+  { href: '/lojas-ciudad-del-este', icon: '🏬', label: 'Melhores lojas de Ciudad del Este' },
+  { href: '/brasil-vs-paraguai', icon: '🆚', label: 'Brasil vs Paraguai — o que compensa?' },
+  // 💳 Pagamento e dicas
+  { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
+  { href: '/o-que-comprar-paraguai', icon: '🛍️', label: 'O que vale a pena comprar?' },
+  { href: '/perfume-importado-paraguai', icon: '🌸', label: 'Perfume Importado no Paraguai 2026' },
+]
+
 export default function Home() {
   const { valorUSD, setValorUSD, moeda, setMoeda, tipo, setTipo, banco, setBanco, resultado, cotacao, loading, error, pessoas, setPessoas, historico } = useCalculadora()
   return (
@@ -291,6 +327,8 @@ export default function Home() {
         }}
       />
       <main className="min-h-screen bg-gray-50 pb-20">
+
+        {/* Header */}
         <div className="bg-gradient-to-r from-green-600 to-green-500 px-5 pt-10 pb-8 text-white">
           <h1 className="text-2xl font-bold">🇵🇾 Calculadora Paraguai 2026</h1>
           <p className="text-green-100 text-sm mt-1">Cota, impostos e câmbio em tempo real</p>
@@ -298,6 +336,8 @@ export default function Home() {
         </div>
 
         <div className="px-4 -mt-4 space-y-4">
+
+          {/* Card principal */}
           <div className="bg-white rounded-2xl shadow-md p-5">
             <div className="flex items-center justify-between mb-1">
               <label className="text-sm font-medium text-gray-600">{moeda === 'USD' ? 'Valor em dólar (US$)' : 'Valor em real (R$)'}</label>
@@ -310,60 +350,93 @@ export default function Home() {
             </div>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium">{moeda === 'USD' ? 'US$' : 'R$'}</span>
-              <input type="number" inputMode="decimal" placeholder="0,00" value={valorUSD}
+              <input
+                type="number"
+                inputMode="decimal"
+                placeholder="0,00"
+                value={valorUSD}
                 onChange={e => setValorUSD(e.target.value)}
-                autoFocus className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500" />
+                autoFocus
+                className="w-full border border-gray-300 rounded-xl pl-12 pr-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
             </div>
+
+            {/* Forma de pagamento */}
             <div className="mt-4">
               <label className="block text-sm font-medium text-gray-600 mb-2">Forma de pagamento</label>
               <div className="grid grid-cols-3 gap-2">
-                            {[
-              // 🛍️ Produtos
-              { href: '/celular-paraguai', icon: '📱', label: 'Celular no Paraguai 2026' },
-              { href: '/notebook-paraguai', icon: '💻', label: 'Notebook no Paraguai 2026' },
-              { href: '/samsung-paraguai', icon: '📲', label: 'Samsung no Paraguai 2026' },
-              { href: '/airpods-paraguai', icon: '🎧', label: 'AirPods no Paraguai 2026' },
-              { href: '/macbook-paraguai', icon: '💻', label: 'MacBook no Paraguai 2026' },
-              { href: '/quanto-custa-iphone-paraguai', icon: '📱', label: 'Quanto custa iPhone no Paraguai?' },
-              { href: '/ps5-paraguai', icon: '🎮', label: 'PS5 no Paraguai 2026' },
-              { href: '/perfume-paraguai', icon: '🌸', label: 'Perfume no Paraguai' },
-              { href: '/perfume-chanel-paraguai', icon: '🌸', label: 'Perfume Chanel no Paraguai' },
-              { href: '/whisky-paraguai', icon: '🥃', label: 'Whisky no Paraguai 2026' },
-              { href: '/eletronicos-paraguai', icon: '🖥️', label: 'Eletrônicos no Paraguai' },
-              // 🧮 Imposto e cota
-              { href: '/como-calcular-imposto-paraguai', icon: '🧮', label: 'Como calcular imposto Paraguai?' },
-              { href: '/quanto-de-imposto-pagar-no-paraguai', icon: '💰', label: 'Quanto de imposto pagar?' },
-              { href: '/cota-paraguai-via-terrestre', icon: '🌉', label: 'Cota via terrestre 2026' },
-              { href: '/imposto-iphone-paraguai', icon: '📱', label: 'Imposto iPhone Paraguai' },
-              { href: '/limite-compras-paraguai', icon: '🛃', label: 'Qual o limite de compras?' },
-              { href: '/como-declarar-paraguai', icon: '📋', label: 'Como declarar na Receita?' },
-              // 🗺️ Guias de viagem
-              { href: '/guia-compras-paraguai', icon: '🗺️', label: 'Guia completo de compras no Paraguai' },
-              { href: '/como-chegar-ciudad-del-este', icon: '🚗', label: 'Como chegar em Ciudad del Este' },
-              { href: '/como-nao-cair-em-golpes-paraguai', icon: '🚨', label: 'Como não cair em golpes no Paraguai' },
-              { href: '/alfandega-paraguai', icon: '🛃', label: 'Alfândega do Paraguai 2026' },
-              { href: '/lojas-ciudad-del-este', icon: '🏬', label: 'Melhores lojas de Ciudad del Este' },
-              { href: '/brasil-vs-paraguai', icon: '🆚', label: 'Brasil vs Paraguai — o que compensa?' },
-              // 💳 Pagamento e dicas
-              { href: '/melhor-forma-pagamento-paraguai', icon: '💳', label: 'Melhor forma de pagamento' },
-              { href: '/o-que-comprar-paraguai', icon: '🛍️', label: 'O que vale a pena comprar?' },
-            ].map(({ href, icon, label }) => (
-              <Link key={href} href={href}
-                className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
-                <span className="text-lg">{icon}</span><span>{label}</span>
-                <span className="ml-auto text-gray-400">→</span>
-              </Link>
-            ))}
+                {[
+                  { value: 'dinheiro', label: '💵 Dinheiro' },
+                  { value: 'pix', label: '⚡ Pix' },
+                  { value: 'credito', label: '💳 Cartão' },
+                ].map(({ value, label }) => (
+                  <button key={value} onClick={() => setTipo(value)}
+                    className={`py-2 rounded-xl text-sm font-medium border transition-colors ${tipo === value ? 'bg-green-500 text-white border-green-500' : 'bg-white text-gray-600 border-gray-200'}`}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <BancoSelector tipo={tipo} banco={banco} setBanco={setBanco} />
           </div>
 
+          {/* Erro */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-2xl p-4 text-sm text-red-700">
+              ⚠️ {error}
+            </div>
+          )}
+
+          {/* Progresso cota */}
+          <ProgressoCota resultado={resultado} valorUSD={valorUSD} cotacao={cotacao} moeda={moeda} />
+
+          {/* Resultado */}
+          {loading && (
+            <div className="bg-white rounded-2xl p-6 text-center text-gray-400 shadow-sm">
+              Calculando...
+            </div>
+          )}
+          {!loading && <ResultadoCard resultado={resultado} />}
+
+          {/* Modo família */}
+          <ModoFamilia pessoas={pessoas} setPessoas={setPessoas} resultado={resultado} cotacao={cotacao} />
+
+          {/* Comparativo */}
+          <ComparativoSection valorUSD={valorUSD} moeda={moeda} cotacao={cotacao} />
+
+          {/* Compartilhar */}
+          <CompartilharBtn resultado={resultado} valorUSD={valorUSD} tipo={tipo} />
+
+          {/* Banner Nomad */}
+          <BannerNomad />
+
+          {/* Histórico */}
+          <HistoricoCalculos historico={historico} />
+
+          {/* Links SEO */}
+          <div className="bg-white rounded-2xl p-5 shadow-sm">
+            <h2 className="font-bold text-gray-800 mb-3">📚 Guias e informações</h2>
+            <div className="space-y-2">
+              {SEO_LINKS.map(({ href, icon, label }) => (
+                <Link key={href} href={href}
+                  className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3 text-sm text-gray-700 border border-gray-100 hover:border-green-300 transition-colors">
+                  <span className="text-lg">{icon}</span>
+                  <span>{label}</span>
+                  <span className="ml-auto text-gray-400">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Privacidade */}
           <div className="text-center py-2">
             <Link href="/privacidade" className="text-xs text-gray-400 hover:text-gray-600">Política de Privacidade</Link>
           </div>
+
         </div>
-        </div>
-        </div>
-        </div>
-            <BotaoFlutuante resultado={resultado} />
+
+        <BotaoFlutuante resultado={resultado} />
       </main>
     </>
   )
