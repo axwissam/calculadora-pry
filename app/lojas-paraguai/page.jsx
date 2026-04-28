@@ -3,8 +3,8 @@ import BannerNomad from '../components/BannerNomad'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Melhores Lojas do Paraguai em 2026 | Guia Completo Ciudad del Este',
-  description: 'Conheça as melhores e mais confiáveis lojas do Paraguai em 2026. Shopping China, Flytec, Mobile Zone, Visão VIP, Star Company e Elegancia com endereços e dicas.',
+  title: 'Melhores Lojas do Paraguai 2026: Shopping China, Flytec e mais | CotaParaguai',
+  description: 'Guia das melhores lojas do Paraguai em 2026. Shopping China, Flytec, Mobile Zone, Visao VIP e Elegancia — enderecos, especialidades e links oficiais.',
   keywords: 'melhores lojas paraguai, lojas confiáveis ciudad del este, onde comprar paraguai, shopping china paraguai, flytec paraguai',
 }
 

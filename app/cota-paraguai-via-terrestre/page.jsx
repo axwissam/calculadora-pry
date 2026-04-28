@@ -2,8 +2,8 @@ import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
-  title: 'Cota Paraguai Via Terrestre 2026 - Limite e Regras | Calculadora Paraguai',
-  description: 'Cota de compras no Paraguai via terrestre em 2026. US$ 500 por pessoa pela Ponte da Amizade. Regras, o que conta e como nao pagar imposto.',
+  title: 'Cota de Compras Paraguai 2026: US$ 500 Via Terrestre | CotaParaguai',
+  description: 'Cota paraguai 2026: US$ 500 por pessoa via terrestre pela Ponte da Amizade. Veja o que conta na cota, como somar com a familia e evitar imposto.',
   keywords: 'cota paraguai via terrestre 2026, cota ponte da amizade, limite compras paraguai terrestre, cota us 500 paraguai',
 }
 

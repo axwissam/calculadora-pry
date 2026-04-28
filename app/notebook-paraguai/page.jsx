@@ -2,8 +2,8 @@ import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
-  title: 'Notebook no Paraguai 2026 - Vale a Pena? Precos e Dicas | Calculadora Paraguai',
-  description: 'Vale a pena comprar notebook no Paraguai em 2026? Precos de MacBook, Dell e Lenovo, calculo de imposto e o que verificar antes de comprar.',
+  title: 'Notebook no Paraguai 2026: Precos, Imposto e Vale a Pena? | CotaParaguai',
+  description: 'Quanto custa notebook no Paraguai em 2026? MacBook Air a partir de US$ 1.099, Dell e Lenovo com ate 35% de desconto. Calcule o preco final com imposto.',
   keywords: 'notebook paraguai 2026, notebook mais barato paraguai, macbook paraguai, dell paraguai, comprar notebook paraguai',
 }
 

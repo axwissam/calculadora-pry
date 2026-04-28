@@ -2,8 +2,8 @@ import Link from 'next/link'
 import BannerNomad from '../components/BannerNomad'
 
 export const metadata = {
-  title: 'Celular no Paraguai 2026 - Vale a Pena? Precos e Dicas | Calculadora Paraguai',
-  description: 'Vale a pena comprar celular no Paraguai em 2026? Veja precos de iPhone e Samsung, calcule o imposto e saiba o que verificar antes de comprar.',
+  title: 'Celular no Paraguai 2026: iPhone e Samsung com ate 40% off | CotaParaguai',
+  description: 'Comprar celular no Paraguai vale a pena em 2026? iPhone 16 a partir de US$ 799 e Samsung Galaxy com ate 40% de desconto. Calcule o preco final com imposto.',
   keywords: 'celular paraguai 2026, comprar celular paraguai, celular mais barato paraguai, samsung paraguai, iphone paraguai preco',
 }
 
